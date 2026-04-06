@@ -1,0 +1,39 @@
+---
+const navLinks = [
+  {
+    href: "https://linktr.ee/PMDPathThroughTime",
+    label: "All our links",
+  },
+  {
+    href: "https://open.spotify.com/show/1ImfR6fAe241ATmhHHLP6C",
+    label: "Spotify",
+  },
+  {
+    href: "https://www.youtube.com/@MysteryDungeonPTT",
+    label: "YouTube",
+  },
+  {
+    href: "https://discord.gg/A7NCWyPkSd",
+    label: "Discord",
+  },
+  {
+    href: "https://www.patreon.com/c/MysteryDungeonPTT/posts",
+    label: "Patreon",
+  },
+];
+---
+<header>
+  <h1 class="nav-title">Mystery Dungeon: A Path Through Time</h1>
+  <nav class="site-nav" aria-label="Primary">
+    {navLinks.map((link) => (
+      <a
+        class="site-nav-link"
+        href={link.href}
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        {link.label}
+      </a>
+    ))}
+  </nav>
+</header>

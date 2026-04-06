@@ -1,0 +1,127 @@
+---
+import { Image } from "astro:assets";
+import CtaButton from "../components/CtaButton.astro";
+import BaseLayout from "../layouts/BaseLayout.astro";
+import NasCiteLink from "../components/NasCiteLink.astro";
+import heroLogo from "../images/hero_logo.png";
+import alchasRegionMap from "../images/alchas_region_map.webp";
+
+const ctaLinks = [
+  {
+    href: "https://open.spotify.com/show/1ImfR6fAe241ATmhHHLP6C",
+    label: "Listen on Spotify",
+  },
+  {
+    href: "https://discord.gg/A7NCWyPkSd",
+    label: "Join Our Discord",
+  },
+  {
+    href: "https://zencastr.com/Mystery-Dungeon-a-Path-Through-Time",
+    label: "Browse All Episodes",
+  },
+];
+
+const characters = [
+  {
+    name: "Hikaru Hatsumi",
+    species: "Pikachu",
+    pronouns: "she/her",
+  },
+  {
+    name: "Bruce Flameback",
+    species: "Cyndaquil",
+    pronouns: "he/him",
+  },
+  {
+    name: "Walter Fisthands",
+    species: "Riolu",
+    pronouns: "he/him",
+  },
+  {
+    name: "Salena",
+    species: "Glaceon",
+    pronouns: "she/her",
+  },
+  {
+    name: "Brielle",
+    species: "Umbreon",
+    pronouns: "she/her",
+  },
+  {
+    name: "Abyss",
+    species: "Umbreon",
+    pronouns: "he/him",
+  },
+];
+---
+
+<BaseLayout>
+  <main>
+    <section id="hero" class="hero orange-background">
+      <div class="hero-content">
+        <!-- Logo image -->
+        <div class="hero-image">
+          <Image
+            src={heroLogo}
+            alt="Mystery Dungeon: A Path Through Time logo"
+            title="Mystery Dungeon: A Path Through Time logo"
+          />
+        </div>
+
+        <!-- Logline and blurb -->
+        <h2 id="logline" class="hero-logline">
+          A TTRPG podcast set in a world where only Pokémon live!
+        </h2>
+
+        <p id="blurb" class="hero-blurb">
+          Follow the escapades of Hikaru the Pikachu, Bruce the Cyndaquil, and
+          Walter the Riolu as they discover the mysteries of the Three Orbs and
+          the spacetime rifts in this fan-driven actual play production.
+          Available on Spotify, YouTube, and wherever else you get your
+          podcasts!
+        </p>
+
+        <!-- Call to action buttons -->
+        <div class="cta-buttons" aria-label="Listen and watch links">
+          {ctaLinks.map((link) => <CtaButton {...link} />)}
+        </div>
+      </div>
+    </section>
+
+    <section id="story-detail" class="cream-background">
+      <div class="story-detail-layout">
+        <section id="characters" class="story-panel">
+          <h2>Meet the Characters</h2>
+          <div class="character-grid">
+            {characters.map((character) => (
+              <article class="character-card">
+                <h3>{character.name}</h3>
+                <p>Species: {character.species}</p>
+                <p>Pronouns: {character.pronouns}</p>
+              </article>
+            ))}
+          </div>
+        </section>
+
+        <section id="setting" class="story-panel">
+          <div class="setting-layout">
+            <article id="setting-blurb">
+              <h2>Explore the Alchas Region</h2>
+              <p>
+                Dive into the Alchas region, the unique campaign setting first
+                introduced in our sister show <NasCiteLink />.
+              </p>
+            </article>
+
+            <figure class="setting-figure">
+              <Image src={alchasRegionMap} alt="Map of the Alchas region" />
+              <figcaption>
+                Credit: <NasCiteLink />
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
