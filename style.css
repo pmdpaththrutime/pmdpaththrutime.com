@@ -212,7 +212,7 @@ section {
 }
 
 .hero-image {
-  width: 420px;
+  width: min(420px, 100%); /* ensure the image doesn't go off the edge of the screen */
   max-width: 70%;
 }
 
