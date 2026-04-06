@@ -19,6 +19,39 @@ const ctaLinks = [
     label: "Browse All Episodes",
   },
 ];
+
+const characters = [
+  {
+    name: "Hikaru Hatsumi",
+    species: "Pikachu",
+    pronouns: "she/her",
+  },
+  {
+    name: "Bruce Flameback",
+    species: "Cyndaquil",
+    pronouns: "he/him",
+  },
+  {
+    name: "Walter Fisthands",
+    species: "Riolu",
+    pronouns: "he/him",
+  },
+  {
+    name: "Salena",
+    species: "Glaceon",
+    pronouns: "she/her",
+  },
+  {
+    name: "Brielle",
+    species: "Umbreon",
+    pronouns: "she/her",
+  },
+  {
+    name: "Abyss",
+    species: "Umbreon",
+    pronouns: "he/him",
+  },
+];
 ---
 
 <BaseLayout>
@@ -56,36 +89,13 @@ const ctaLinks = [
         <section id="characters" class="story-panel">
           <h2>Meet the Characters</h2>
           <div class="character-grid">
-            <article class="character-card">
-              <h3>Hikaru Hatsumi</h3>
-              <p>Species: Pikachu</p>
-              <p>Pronouns: she/her</p>
-            </article>
-            <article class="character-card">
-              <h3>Bruce Flameback</h3>
-              <p>Species: Cyndaquil</p>
-              <p>Pronouns: he/him</p>
-            </article>
-            <article class="character-card">
-              <h3>Walter Fisthands</h3>
-              <p>Species: Riolu</p>
-              <p>Pronouns: he/him</p>
-            </article>
-            <article class="character-card">
-              <h3>Salena</h3>
-              <p>Species: Glaceon</p>
-              <p>Pronouns: she/her</p>
-            </article>
-            <article class="character-card">
-              <h3>Brielle</h3>
-              <p>Species: Umbreon</p>
-              <p>Pronouns: she/her</p>
-            </article>
-            <article class="character-card">
-              <h3>Abyss</h3>
-              <p>Species: Umbreon</p>
-              <p>Pronouns: he/him</p>
-            </article>
+            {characters.map((character) => (
+              <article class="character-card">
+                <h3>{character.name}</h3>
+                <p>Species: {character.species}</p>
+                <p>Pronouns: {character.pronouns}</p>
+              </article>
+            ))}
           </div>
         </section>
 
@@ -100,9 +110,7 @@ const ctaLinks = [
                   href="https://www.notascratchcast.com/"
                   target="_blank"
                   rel="noopener noreferrer"
-                >
-                  <cite>Not A Scratch</cite>
-                </a>.
+                ><cite>Not A Scratch</cite></a>.
               </p>
             </article>
 
