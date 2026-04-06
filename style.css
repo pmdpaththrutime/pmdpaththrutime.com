@@ -23,6 +23,11 @@ header {
   background-color: var(--header-bg);
 }
 
+header .nav-title {
+  font-size: 1em;
+  margin-left: 2em;
+}
+
 main {
   padding-left: 10%;
   padding-right: 10%;
