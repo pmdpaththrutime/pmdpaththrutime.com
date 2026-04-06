@@ -59,6 +59,7 @@ const characters = [
   <main>
     <section id="hero" class="hero orange-background">
       <div class="hero-content">
+        <!-- Logo image -->
         <div class="hero-image">
           <Image
             src={heroLogo}
@@ -67,6 +68,7 @@ const characters = [
           />
         </div>
 
+        <!-- Logline and blurb -->
         <h2 id="logline" class="hero-logline">
           A TTRPG podcast set in a world where only Pokémon live!
         </h2>
@@ -79,6 +81,7 @@ const characters = [
           podcasts!
         </p>
 
+        <!-- Call to action buttons -->
         <div class="cta-buttons" aria-label="Listen and watch links">
           {ctaLinks.map((link) => <CtaButton {...link} />)}
         </div>
