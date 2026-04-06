@@ -9,7 +9,8 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="preload" href="style.css" as="style">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -83,16 +84,18 @@
         </section>
     </main>
     <footer>
-        <p>
-            <small>
-                Website &copy; 2026 The PTT Crew.
-                All episodes &copysr; 2023-2026 their respective authors.
-                <!-- &copysr; (phonographic copyright) is for audio content. &copy; (standard copyright) is for visual and text content. -->
-            </small>
-        </p>
-        <p>
-            <small><i>Mystery Dungeon: A Path Through Time</i> is performed &amp; produced by humans.</small>
-        </p>
+        <small class="ip-notices">
+            Website &copy; 2026 The PTT Crew.
+            All episodes &copysr; 2023-2026 their respective authors.
+            <!-- &copysr; (phonographic copyright) is for audio content. &copy; (standard copyright) is for visual and text content. -->
+        </small>
+        <small class="ip-notices">
+                Pokémon and related names are trademarks of Nintendo.
+                We are not affiliated with The Pokémon Company, Nintendo, Spike Chunsoft, or their affiliates.
+        </small>
+        <small class="ip-notices">
+                <i>Mystery Dungeon: A Path Through Time</i> is performed &amp; produced by humans.
+        </small>
     </footer>
 </body>
 </html>

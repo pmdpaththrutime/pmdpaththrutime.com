@@ -86,12 +86,6 @@ main {
   padding-bottom: 2rem;
 }
 
-footer {
-  text-align: center;
-  padding: 1rem;
-  background-color: var(--header-bg);
-}
-
 /* Styles for the hero section on the homepage */
 
 .hero {
@@ -156,4 +150,18 @@ footer {
 .cta-button:focus-visible {
   background-color: var(--text-white);
   color: var(--brick-red);
+}
+
+/* Footer styles */
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background-color: var(--header-bg);
+}
+
+.ip-notices {
+  display: block; /* induces paragraph-like behavior even though they are <small> elements */
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem; /* smaller than normal paragraph breaks */
 }
