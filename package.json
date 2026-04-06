@@ -1,0 +1,18 @@
+{
+  "name": "pmdpaththrutime",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "devDependencies": {
+    "@img/sharp-win32-arm64": "0.34.5",
+    "@rollup/rollup-win32-arm64-msvc": "4.60.1",
+    "astro": "^6.1.4",
+    "sharp": "^0.34.5",
+    "typescript": "^5.0.0"
+  }
+}
