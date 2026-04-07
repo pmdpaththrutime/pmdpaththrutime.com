@@ -300,3 +300,7 @@ footer {
     width: 90%;
   }
 }
+
+.content-page-container {
+  padding-bottom: 3rem;
+}
