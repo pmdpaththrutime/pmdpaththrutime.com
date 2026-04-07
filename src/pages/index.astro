@@ -1,5 +1,5 @@
 ---
-import { Image } from "astro:assets";
+import { Picture } from "astro:assets";
 import CtaButton from "../components/CtaButton.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import NasCiteLink from "../components/NasCiteLink.astro";
@@ -61,12 +61,13 @@ const characters = [
       <div class="hero-content">
         <!-- Logo image -->
         <div class="hero-image">
-          <Image
+          <Picture
             src={heroLogo}
             alt="Mystery Dungeon: A Path Through Time logo"
             title="Mystery Dungeon: A Path Through Time logo"
-            width="420"
-            height="451"
+            formats={['avif', 'webp', 'png']}
+            widths={[202, 420]}
+            loading="lazy"
           />
         </div>
 
@@ -116,7 +117,13 @@ const characters = [
             </article>
 
             <figure class="setting-figure">
-              <Image src={alchasRegionMap} alt="Map of the Alchas region" width="	657" height="332" />
+              <Picture
+                src={alchasRegionMap}
+                alt="Map of the Alchas region"
+                formats={['avif', 'webp', 'png']}
+                widths={[256, 512, 657]}
+                loading="lazy"
+              />
               <figcaption>
                 Credit: <NasCiteLink />
               </figcaption>
