@@ -1,8 +1,6 @@
 ---
-import ExternalLink from "./ExternalLink.astro";
+import NavLink from "./NavLink.astro";
 import { SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL, PATREON_URL, LINKTREE_URL } from "../constants.ts";
-
-const currentPath = Astro.url.pathname;
 
 const navLinks = [
   {
@@ -33,33 +31,12 @@ const navLinks = [
 ---
 <header>
   <h1 class="nav-title">
-    {
-      // Don't link the site title to the homepage if we're already on the homepage
-      currentPath === "/" ? (
-        // Fake link styling to ensure a consistent look and feel across all pages
-        <span class="site-nav-link">Mystery Dungeon: A Path Through Time</span>
-      ) : (
-        <a class="site-nav-link" href="/">Mystery Dungeon: A Path Through Time</a>
-      )
-    }
+    <NavLink href="/">Mystery Dungeon: A Path Through Time</NavLink>
   </h1>
   <nav class="site-nav" aria-label="Primary">
     {navLinks.map((link) => (
-      // Use ExternalLink for external links and regular <a> for internal links
-      (link.href.startsWith("https://") || link.href.startsWith("http://")) ? (
-        <ExternalLink class="site-nav-link" href={link.href}>
-          {link.label}
-        </ExternalLink>
-      ) : (
-        (currentPath === link.href) ? (
-          // If the link is for the current page, render it as a non-link with active styling
-          <span class="site-nav-link">{link.label}</span>
-        ) : (
-          <a class="site-nav-link" href={link.href}>
-            {link.label}
-          </a>
-        )
-      ))
+      <NavLink href={link.href}>{link.label}</NavLink>
+      )
     )}
   </nav>
 </header>
