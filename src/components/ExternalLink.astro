@@ -1,0 +1,6 @@
+---
+// Defines an external link component that opens in a new tab and is safe from
+// security vulnerabilities.
+const { href, ...rest } = Astro.props;
+---
+<a href={href} target="_blank" rel="noopener noreferrer" {...rest}><slot></a>
