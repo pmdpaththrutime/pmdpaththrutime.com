@@ -1,8 +1,7 @@
 ---
-// Reusable link to Not A Scratch with <cite> element for proper semantics and styling
+// Reusable link to Not A Scratch with <cite> element for proper semantics and styling.
+// There should be no leading or trailing whitespace inside this component.
+
+import ExternalLink from "./ExternalLink.astro";
 ---
-<a
-  href="https://www.notascratchcast.com/"
-  target="_blank"
-  rel="noopener noreferrer"
-><cite>Not A Scratch</cite></a>
+<ExternalLink href="https://www.notascratchcast.com/"><cite>Not A Scratch</cite></ExternalLink>
