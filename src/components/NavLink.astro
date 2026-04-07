@@ -11,10 +11,12 @@ const { href } = Astro.props;
     </ExternalLink>
   ) : (
     (currentPath === href) ? (
-      // If the link is for the current page, render it as a non-link with active styling
-      <span class="site-nav-link">
+      // If the link is for the current page, render it as a no-href link with the same
+      // styling to ensure a consistent look and feel across all pages, but with
+      // appropriate semantics for screen readers
+      <a class="site-nav-link" role="link" aria-disabled="true">
         <slot />
-      </span>
+      </a>
     ) : (
       // Otherwise, render a normal internal link
       <a class="site-nav-link" href={href}>
