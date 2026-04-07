@@ -260,14 +260,48 @@ section {
 /* Footer styles */
 
 footer {
-  text-align: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
   padding: 1.5rem;
   background-color: var(--header-bg);
 }
 
+.footer-column {
+  min-width: 0;
+}
+
+.footer-links {
+  /* Width of each footer link column */
+  flex: 0 0 15%;
+  text-align: left;
+}
+
+.footer-notices {
+  flex: 1 1 0;
+  text-align: left;
+}
+
+.footer-heading {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.footer-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+}
+
+.footer-list li + li {
+  margin-top: 0.5rem;
+}
+
 .ip-notices {
   display: block; /* induces paragraph-like behavior even though they are <small> elements */
-  margin-top: 0.5rem;
+  margin-top: 0;
   margin-bottom: 0.5rem; /* smaller than normal paragraph breaks */
 }
 
@@ -278,6 +312,11 @@ footer {
 
   .setting-layout {
     flex-direction: column;
+  }
+
+  .footer-links,
+  .footer-notices {
+    flex: 1 1 100%;
   }
 }
 

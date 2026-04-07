@@ -1,18 +1,99 @@
 ---
+import NavLink from "./NavLink.astro";
+
+import {
+  APPLE_PODCASTS_URL,
+  AUDIBLE_URL,
+  SPOTIFY_URL,
+  YOUTUBE_URL,
+  INSTAGRAM_URL,
+  BLUESKY_URL,
+  TWITTER_URL,
+  DISCORD_URL,
+  ZENCASTR_URL,
+  PATREON_URL
+} from "../constants.ts";
+
 const currentYear = new Date().getFullYear();
+
+const streamingLinks = [
+  {
+    href: SPOTIFY_URL,
+    label: "Spotify",
+  },
+  {
+    href: YOUTUBE_URL,
+    label: "YouTube",
+  },
+  {
+    href: APPLE_PODCASTS_URL,
+    label: "Apple Podcasts",
+  },
+  {
+    href: AUDIBLE_URL,
+    label: "Audible",
+  },
+  {
+    href: ZENCASTR_URL,
+    label: "Zencastr",
+  },
+];
+
+const socialLinks = [
+  {
+    href: DISCORD_URL,
+    label: "Discord",
+  },
+  {
+    href: INSTAGRAM_URL,
+    label: "Instagram",
+  },
+  {
+    href: BLUESKY_URL,
+    label: "Bluesky",
+  },
+  {
+    href: TWITTER_URL,
+    label: "X/Twitter",
+  },
+  {
+    href: PATREON_URL,
+    label: "Patreon",
+  }
+];
 ---
 <footer>
-  <small class="ip-notices">
-    Website &copy; {currentYear} The PTT Crew. All episodes &copysr; 2023-{currentYear}
-    their respective authors.
-    <!-- &copysr; (phonographic copyright) is for audio content. &copy; (standard copyright)
-     is for visual and text content. -->
-  </small>
-  <small class="ip-notices">
-    Pokémon and related names are trademarks of Nintendo. We are not affiliated with
-    The Pokémon Company, Nintendo, Spike Chunsoft, or their affiliates.
-  </small>
-  <small class="ip-notices">
-    <cite>Mystery Dungeon: A Path Through Time</cite> is performed and produced by humans.
-  </small>
+  <div class="footer-column footer-links">
+    <h2 class="footer-heading">Where to Listen</h2>
+    <ul class="footer-list">
+      {streamingLinks.map((link) => (
+        <li><NavLink href={link.href}>{link.label}</NavLink></li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="footer-column footer-links">
+    <h2 class="footer-heading">Follow Us!</h2>
+    <ul class="footer-list">
+      {socialLinks.map((link) => (
+        <li><NavLink href={link.href}>{link.label}</NavLink></li>
+      ))}
+    </ul>
+  </div>
+
+  <div class="footer-column footer-notices">
+    <small class="ip-notices">
+      Website &copy; {currentYear} The PTT Crew. All episodes &copysr; 2023-{currentYear}
+      their respective authors.
+      <!-- &copysr; (phonographic copyright) is for audio content. &copy; (standard copyright)
+       is for visual and text content. -->
+    </small>
+    <small class="ip-notices">
+      Pokémon and related names are trademarks of Nintendo. We are not affiliated with
+      The Pokémon Company, Nintendo, Spike Chunsoft, or their affiliates.
+    </small>
+    <small class="ip-notices">
+      <cite>Mystery Dungeon: A Path Through Time</cite> is performed and produced by humans.
+    </small>
+  </div>
 </footer>

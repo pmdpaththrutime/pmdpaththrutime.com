@@ -8,3 +8,6 @@ export const PATREON_URL = "https://www.patreon.com/c/MysteryDungeonPTT/posts";
 export const LINKTREE_URL = "https://linktr.ee/PMDPathThroughTime";
 export const ZENCASTR_URL = "https://zencastr.com/Mystery-Dungeon-a-Path-Through-Time";
 export const AUDIBLE_URL = "https://www.audible.com/podcast/Mystery-Dungeon-a-Path-Through-Time/B0CKM9T473";
+export const INSTAGRAM_URL = "https://www.instagram.com/pmdpaththroughtime/";
+export const BLUESKY_URL = "https://bsky.app/profile/paththrutime.pmd.social";
+export const TWITTER_URL = "https://x.com/PMDPathThruTime";
