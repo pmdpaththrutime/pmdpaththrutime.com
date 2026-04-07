@@ -1,25 +1,26 @@
 ---
 import ExternalLink from "./ExternalLink.astro";
+import { SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL, PATREON_URL, LINKTREE_URL } from "../constants.ts";
 
 const navLinks = [
   {
-    href: "https://linktr.ee/PMDPathThroughTime",
+    href: LINKTREE_URL,
     label: "All our links",
   },
   {
-    href: "https://open.spotify.com/show/1ImfR6fAe241ATmhHHLP6C",
+    href: SPOTIFY_URL,
     label: "Spotify",
   },
   {
-    href: "https://www.youtube.com/@MysteryDungeonPTT",
+    href: YOUTUBE_URL,
     label: "YouTube",
   },
   {
-    href: "https://discord.gg/A7NCWyPkSd",
+    href: DISCORD_URL,
     label: "Discord",
   },
   {
-    href: "https://www.patreon.com/c/MysteryDungeonPTT/posts",
+    href: PATREON_URL,
     label: "Patreon",
   },
 ];

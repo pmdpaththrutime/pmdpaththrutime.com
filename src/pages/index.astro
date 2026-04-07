@@ -5,18 +5,19 @@ import BaseLayout from "../layouts/BaseLayout.astro";
 import NasCiteLink from "../components/NasCiteLink.astro";
 import heroLogo from "../images/hero_logo.png";
 import alchasRegionMap from "../images/alchas_region_map.webp";
+import { SPOTIFY_URL, DISCORD_URL, ZENCASTR_URL } from "../constants.ts";
 
 const ctaLinks = [
   {
-    href: "https://open.spotify.com/show/1ImfR6fAe241ATmhHHLP6C",
+    href: SPOTIFY_URL,
     label: "Listen on Spotify",
   },
   {
-    href: "https://discord.gg/A7NCWyPkSd",
+    href: DISCORD_URL,
     label: "Join Our Discord",
   },
   {
-    href: "https://zencastr.com/Mystery-Dungeon-a-Path-Through-Time",
+    href: ZENCASTR_URL,
     label: "Browse All Episodes",
   },
 ];
@@ -80,8 +81,7 @@ const characters = [
           Follow the escapades of Hikaru the Pikachu, Bruce the Cyndaquil, and
           Walter the Riolu as they discover the mysteries of the Three Orbs and
           the spacetime rifts in this fan-driven actual play production.
-          Available on Spotify, YouTube, and wherever else you get your
-          podcasts!
+          Available on Spotify, YouTube, and wherever else you get your podcasts!
         </p>
 
         <!-- Call to action buttons -->

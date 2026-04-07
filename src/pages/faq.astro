@@ -1,6 +1,9 @@
 ---
 import ExternalLink from "../components/ExternalLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+
+import { SPOTIFY_URL, YOUTUBE_URL, APPLE_PODCASTS_URL, AUDIBLE_URL, LINKTREE_URL, DISCORD_URL } from "../constants.ts";
+import NasCiteLink from "../components/NasCiteLink.astro";
 ---
 
 <BaseLayout>
@@ -10,21 +13,55 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     </div>
 
     <article class="cream-background content-page">
-      <h3>What's an actual play podcast?</h3>
-
-      TODO Add text here
-
       <h3>Where do I start?</h3>
 
-      We suggest starting from the beginning of Arc 3.
+      <p>We suggest starting from the beginning of Arc 3. Or anywhere, really!</p>
 
       <h3>Where can I listen?</h3>
 
-      <cite>Mystery Dungeon: A Path Through Time</cite> is available to stream on
-      Spotify, YouTube,
-      Apple Podcasts, Audible, and most other podcast platforms. You can find all the
-      podcast app links on our
-      <ExternalLink href="https://linktr.ee/PMDPathThroughTime">Linktree page</ExternalLink>.
+      <p>
+        <cite>Mystery Dungeon: A Path Through Time</cite> is available to stream on
+        <ExternalLink href={SPOTIFY_URL}>Spotify</ExternalLink>,
+        <ExternalLink href={YOUTUBE_URL}>YouTube</ExternalLink>,
+        <ExternalLink href={APPLE_PODCASTS_URL}>Apple Podcasts</ExternalLink>,
+        <ExternalLink href={AUDIBLE_URL}>Audible</ExternalLink>, and most other podcast platforms. You can find all the
+        podcast app links on our
+        <ExternalLink href={LINKTREE_URL}>Linktree page</ExternalLink>.
+      </p>
+
+      <h3>Where can I find other fans of the show?</h3>
+
+      <p>
+        You can join our <ExternalLink href={DISCORD_URL}>Discord community server</ExternalLink>
+        to chat with the co-hosts and other fans, share fan art, and stay in the loop about
+        everything happening with PTT!
+      </p>
+
+      <h3>Is this a Pokémon fan podcast?</h3>
+
+      <p>
+        Yes! We are huge fans of Pokémon, and our show features original characters and settings
+        inspired by the <cite>Pokémon Mystery Dungeon</cite> video games. However, we also draw
+        inspiration from a wide range of other gaming and pop culture sources, including
+        <cite>Dungeons &amp; Dragons</cite>, <cite>Batman</cite>, and <cite>KPop Demon Hunters</cite>.
+      </p>
+
+      <h3>What game system do you use?</h3>
+
+      <p>
+        We use a homebrew system originally created for our sister show, <NasCiteLink />, by its
+        game master Anirudh. It combines game mechanics from <cite>Dungeons &amp; Dragons</cite>
+        (a.k.a. the d20 System), <cite>Pokémon Mystery Dungeon</cite>, the Pokémon
+        main series, and other homebrew Pokémon tabletop systems.
+      </p>
+    
+      <h3>Do you folks use physical or digital dice?</h3>
+
+      <p>
+        We use a mix of both! Some of us co-hosts prefer physical dice because they're more fun
+        to roll and enhance the listening experience, and some of us use digital dice rollers
+        as a substitute.
+      </p>
     </article>
   </main>
 </BaseLayout>
