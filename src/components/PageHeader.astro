@@ -4,6 +4,10 @@ import { SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL, PATREON_URL, LINKTREE_URL } from
 
 const navLinks = [
   {
+    href: "/faq",
+    label: "FAQ",
+  },
+  {
     href: LINKTREE_URL,
     label: "All our links",
   },
@@ -26,12 +30,21 @@ const navLinks = [
 ];
 ---
 <header>
-  <h1 class="nav-title">Mystery Dungeon: A Path Through Time</h1>
+  <h1 class="nav-title">
+    <a class="site-nav-link" href="/">Mystery Dungeon: A Path Through Time</a>
+  </h1>
   <nav class="site-nav" aria-label="Primary">
     {navLinks.map((link) => (
-      <ExternalLink class="site-nav-link" href={link.href}>
-        {link.label}
-      </ExternalLink>
-    ))}
+      // Use ExternalLink for external links and regular <a> for internal links
+      (link.href.startsWith("https://") || link.href.startsWith("http://")) ? (
+        <ExternalLink class="site-nav-link" href={link.href}>
+          {link.label}
+        </ExternalLink>
+      ) : (
+        <a class="site-nav-link" href={link.href}>
+          {link.label}
+        </a>
+      ))
+    )}
   </nav>
 </header>
