@@ -304,3 +304,8 @@ footer {
 .content-page-container {
   padding-bottom: 3rem;
 }
+
+/* For nested italics/emphasis */
+i em {
+  font-weight: bolder;
+}
