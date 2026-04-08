@@ -6,7 +6,7 @@ const { href } = Astro.props;
 ---
 {(href.startsWith("https://") || href.startsWith("http://")) ? (
     // Use ExternalLink for external links
-    <ExternalLink class="site-nav-link" href={href}>
+    <ExternalLink class="nav-link" href={href}>
       <slot />
     </ExternalLink>
   ) : (
@@ -14,12 +14,12 @@ const { href } = Astro.props;
       // If the link is for the current page, render it as a no-href link with the same
       // styling to ensure a consistent look and feel across all pages, but with
       // appropriate semantics for screen readers
-      <a class="site-nav-link" role="link" aria-disabled="true">
+      <a class="nav-link" role="link" aria-disabled="true">
         <slot />
       </a>
     ) : (
       // Otherwise, render a normal internal link
-      <a class="site-nav-link" href={href}>
+      <a class="nav-link" href={href}>
         <slot />
       </a>
     )

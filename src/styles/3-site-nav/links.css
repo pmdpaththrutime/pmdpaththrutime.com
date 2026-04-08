@@ -1,4 +1,4 @@
-.site-nav-link {
+.nav-link {
   display: inline-block;
   position: relative;
   color: var(--text-white);
@@ -8,12 +8,12 @@
 
 /**
  * The following two style rules control an animated underline effect for navigation
- * links using the .site-nav-link::after pseudo-element.
+ * links using the .nav-link::after pseudo-element.
  * Further reading on this technique: https://css-irl.info/animating-underlines/
  * and https://tobiasahlin.com/blog/css-trick-animating-link-underlines/
  */
 
-.site-nav-link::after {
+.nav-link::after {
   content: "";
   position: absolute;
   left: 0;
@@ -26,9 +26,9 @@
   transition: transform var(--transition-standard);
 }
 
-.site-nav-link:hover::after,
-.site-nav-link:focus::after,
-.site-nav-link:focus-visible::after {
+.nav-link:hover::after,
+.nav-link:focus::after,
+.nav-link:focus-visible::after {
   transform: scaleX(1); /* expands to full width on hover/focus */
 }
 
