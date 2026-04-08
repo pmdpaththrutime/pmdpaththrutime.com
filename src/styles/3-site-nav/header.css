@@ -17,7 +17,7 @@ header .nav-title {
   margin: 0 0 0 2em;
 }
 
-.site-nav {
+.header-nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
