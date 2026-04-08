@@ -7,6 +7,6 @@
 @import "./3-site-nav/footer.css";
 @import "./3-site-nav/links.css";
 
-@import "./4-layout.css";
-@import "./5-homepage.css";
-@import "./6-content-pages.css";
+@import "./4-layout/general.css";
+@import "./4-layout/hero.css";
+@import "./5-homepage-story-detail.css";
