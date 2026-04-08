@@ -294,7 +294,7 @@ footer {
 .footer-notices {
   flex: 1 1 0;
   text-align: left;
-  padding-top: 1.95rem;
+  padding-top: 2.25rem;
 }
 
 .footer-heading {
@@ -332,7 +332,13 @@ footer {
   .setting-layout {
     flex-direction: column;
   }
+}
 
+/* Re-flow footer columns when they get too narrow.
+ * Breakpoints (1029px and 334px) are set to ensure the headings never wrap, so that
+ * the menu columns stay aligned.
+ */
+@media (max-width: 1029px) {
   .footer-links {
     flex: 1 1 30%;
   }
@@ -344,7 +350,7 @@ footer {
   }
 }
 
-@media (max-width: 330px) {
+@media (max-width: 334px) {
   .footer-links {
     flex: 1 1 100%;
   }
