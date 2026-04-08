@@ -85,6 +85,17 @@ header .nav-title {
   transform: scaleX(1); /* expands to full width on hover/focus */
 }
 
+.icon-link {
+  color: var(--text-white);
+  transition: filter var(--transition-standard);
+}
+
+.icon-link:hover,
+.icon-link:focus,
+.icon-link:focus-visible {
+  filter: drop-shadow(0 0 3px var(--subway-orange));
+}
+
 section {
   padding-left: 10%;
   padding-right: 10%;
@@ -266,6 +277,8 @@ footer {
   align-items: flex-start;
   padding: 1.5rem;
   background-color: var(--header-bg);
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .footer-column {
@@ -281,6 +294,7 @@ footer {
 .footer-notices {
   flex: 1 1 0;
   text-align: left;
+  padding-top: 2.25rem;
 }
 
 .footer-heading {
@@ -293,6 +307,11 @@ footer {
   margin: 0;
   padding-left: 0;
   list-style: none;
+  font-size: smaller;
+}
+
+.footer-list .site-nav-link {
+  padding-bottom: 0rem;
 }
 
 .footer-list li + li {
@@ -313,9 +332,26 @@ footer {
   .setting-layout {
     flex-direction: column;
   }
+}
 
-  .footer-links,
+/* Re-flow footer columns when they get too narrow.
+ * Breakpoints (1029px and 334px) are set to ensure the headings never wrap, so that
+ * the menu columns stay aligned.
+ */
+@media (max-width: 1029px) {
+  .footer-links {
+    flex: 1 1 30%;
+  }
+
   .footer-notices {
+    flex: 1 1 100%;
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 334px) {
+  .footer-links {
     flex: 1 1 100%;
   }
 }
@@ -344,7 +380,7 @@ footer {
   padding-bottom: 3rem;
 }
 
-/* For nested italics/emphasis */
-i em {
-  font-weight: bolder;
+/* For nested italics */
+i cite {
+  font-style: normal;
 }

@@ -2,32 +2,43 @@
 import NavLink from "./NavLink.astro";
 import { SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL, PATREON_URL, LINKTREE_URL } from "../constants.ts";
 
+import { Icon } from 'astro-icon/components';
+import ExternalLink from "./ExternalLink.astro";
+
 const navLinks = [
   {
     href: "/faq",
     label: "FAQ",
   },
-  {
-    href: LINKTREE_URL,
-    label: "All our links",
-  },
+];
+
+const iconLinks = [
   {
     href: SPOTIFY_URL,
-    label: "Spotify",
+    icon: "simple-icons:spotify",
+    hint: "Spotify",
   },
   {
     href: YOUTUBE_URL,
-    label: "YouTube",
+    icon: "simple-icons:youtube",
+    hint: "YouTube",
   },
   {
     href: DISCORD_URL,
-    label: "Discord",
+    icon: "simple-icons:discord",
+    hint: "Discord",
   },
   {
     href: PATREON_URL,
-    label: "Patreon",
+    icon: "simple-icons:patreon",
+    hint: "Patreon",
   },
-];
+  {
+    href: LINKTREE_URL,
+    icon: "simple-icons:linktree",
+    hint: "Linktree",
+  }
+]
 ---
 <header>
   <h1 class="nav-title">
@@ -38,5 +49,10 @@ const navLinks = [
       <NavLink href={link.href}>{link.label}</NavLink>
       )
     )}
+    {iconLinks.map((link) => (
+      <ExternalLink href={link.href} class="icon-link">
+        <Icon name={link.icon} title={link.hint} size={20} />
+      </ExternalLink>
+    ))}
   </nav>
 </header>
