@@ -1,0 +1,73 @@
+/* Styles for the hero section (used on homepage and other pages) */
+
+.hero {
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  width: min(90%, 70rem);
+}
+
+.hero-image {
+  width: min(420px, 100%); /* ensure the image doesn't go off the edge of the screen */
+  max-width: 70%;
+}
+
+.hero-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.hero-logline {
+  margin-bottom: 0;
+}
+
+.hero-blurb {
+  margin-top: 0;
+}
+
+.cta-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.9rem 1.4rem;
+  border-radius: 999px;
+  border: 2px solid var(--text-white);
+  background-color: transparent;
+  color: var(--text-white);
+  font-weight: 700;
+  text-decoration: none;
+  /* Use a background-image to simulate the button background swiping at 60 degrees */
+  background-image: linear-gradient(120deg, white 0%, white 50%, transparent 50%, transparent 100%);
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  transition: background-position var(--transition-extended), color var(--transition-extended);
+}
+
+/**
+ * The following style rules create a swiping background effect for CTA buttons
+ * using a background-image with background-position transition.
+ * Technique adapted from: https://stackoverflow.com/a/20751998
+ */
+.cta-button:hover,
+.cta-button:focus-visible {
+  background-position: 0% 0%;
+  color: var(--brick-red);
+}

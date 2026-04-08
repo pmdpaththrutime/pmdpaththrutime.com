@@ -1,0 +1,73 @@
+/* Footer styles */
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background-color: var(--header-bg);
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.footer-column {
+  min-width: 0;
+}
+
+.footer-links {
+  /* Width of each footer link column */
+  flex: 0 0 15%;
+  text-align: left;
+}
+
+.footer-notices {
+  flex: 1 1 0;
+  text-align: left;
+  padding-top: 2.25rem;
+}
+
+.footer-heading {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+}
+
+.footer-list {
+  margin: 0;
+  padding-left: 0;
+  list-style: none;
+  font-size: smaller;
+}
+
+.footer-list .nav-link {
+  padding-bottom: 0rem;
+}
+
+.footer-list li + li {
+  margin-top: 0.5rem;
+}
+
+.ip-notices {
+  display: block; /* induces paragraph-like behavior even though they are <small> elements */
+  margin-top: 0;
+  margin-bottom: 0.5rem; /* smaller than normal paragraph breaks */
+}
+
+@media (max-width: 1029px) {
+  .footer-links {
+    flex: 1 1 30%;
+  }
+
+  .footer-notices {
+    flex: 1 1 100%;
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 334px) {
+  .footer-links {
+    flex: 1 1 100%;
+  }
+}

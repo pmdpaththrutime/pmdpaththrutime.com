@@ -1,0 +1,26 @@
+/* Styles for the site header */
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  padding: 2rem 1rem 2rem 1rem;
+  background-color: var(--header-bg);
+  position: sticky;
+  top: 0;
+}
+
+header .nav-title {
+  font-size: 1em;
+  margin: 0 0 0 2em;
+}
+
+.header-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 1.25rem;
+  margin-right: 2em;
+}
