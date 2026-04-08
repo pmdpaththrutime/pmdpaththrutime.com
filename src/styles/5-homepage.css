@@ -1,0 +1,103 @@
+/* Story detail section styles */
+
+#story-detail {
+  color: #1f1400;
+}
+
+.story-detail-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.story-panel h2 {
+  margin-top: 0;
+}
+
+/* Character cards grid (on homepage) */
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.character-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 8rem;
+  padding: 1rem;
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  background: var(--card-background);
+  text-align: left;
+}
+
+.character-card h3 {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.character-card p {
+  margin: 0.75rem 0 0;
+}
+
+/* Setting section layout (on homepage) */
+
+.setting-layout {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+#setting-blurb {
+  flex: 0 1 45%;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  background: var(--card-background);
+}
+
+#setting-blurb p {
+  margin: 0;
+  font-size: 1.05rem;
+  line-height: 1.6;
+}
+
+.setting-figure {
+  flex: 0 1 55%;
+  margin: 0;
+}
+
+.setting-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.15);
+}
+
+.setting-figure figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+@media (max-width: 900px) {
+  .character-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .setting-layout {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,19 @@
+/* Styles for content pages (FAQ, etc.) */
+
+.content-page {
+  width: 60%;
+  margin: 0 auto;
+  border: var(--card-border);
+  border-radius: 3rem;
+  padding: 2rem;
+}
+
+.content-page-container {
+  padding-bottom: 3rem;
+}
+
+@media (max-width: 768px) {
+  .content-page {
+    width: 90%;
+  }
+}
