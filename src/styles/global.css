@@ -1,12 +1,17 @@
 /* Global Styles - Organized by context and page */
 
+/* Variables and common styles */
 @import "./1-variables.css";
 @import "./2-base.css";
 
+/* All styles related to header and footer navigation, including nav link and icon link styles */
 @import "./3-site-nav/header.css";
 @import "./3-site-nav/footer.css";
 @import "./3-site-nav/links.css";
 
+/* Layout-related styles used on homepage and subpages */
 @import "./4-layout/general.css";
 @import "./4-layout/hero.css";
+
+/* Styles for story/character/setting-related content on homepage (and possibly subpages in the future) */
 @import "./5-homepage-story-detail.css";
