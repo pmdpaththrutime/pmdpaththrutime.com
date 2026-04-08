@@ -1,6 +1,6 @@
 ---
 import NavLink from "./NavLink.astro";
-import { SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL, PATREON_URL, LINKTREE_URL } from "../constants.ts";
+import { SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL, PATREON_URL } from "../constants.ts";
 
 import { Icon } from 'astro-icon/components';
 import ExternalLink from "./ExternalLink.astro";
@@ -33,11 +33,6 @@ const iconLinks = [
     icon: "simple-icons:patreon",
     hint: "Patreon",
   },
-  {
-    href: LINKTREE_URL,
-    icon: "simple-icons:linktree",
-    hint: "Linktree",
-  }
 ]
 ---
 <header>
