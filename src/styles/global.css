@@ -10,6 +10,7 @@
   --card-background: rgba(255, 255, 255, 0.55);
   --gradient-standard: linear-gradient(to bottom, var(--subway-orange), var(--brick-red));
   --transition-standard: 0.3s ease;
+  --transition-extended: 0.6s ease;
 }
 
 html,
@@ -259,7 +260,7 @@ section {
   color: var(--text-white);
   font-weight: 700;
   text-decoration: none;
-  transition: background-color var(--transition-standard), color var(--transition-standard);
+  transition: background-color var(--transition-extended), color var(--transition-extended);
 }
 
 .cta-button:hover,
