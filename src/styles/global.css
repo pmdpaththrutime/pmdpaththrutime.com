@@ -277,6 +277,8 @@ footer {
   align-items: flex-start;
   padding: 1.5rem;
   background-color: var(--header-bg);
+  padding-left: 10%;
+  padding-right: 10%;
 }
 
 .footer-column {
@@ -292,6 +294,7 @@ footer {
 .footer-notices {
   flex: 1 1 0;
   text-align: left;
+  padding-top: 1.95rem;
 }
 
 .footer-heading {
@@ -330,8 +333,19 @@ footer {
     flex-direction: column;
   }
 
-  .footer-links,
+  .footer-links {
+    flex: 1 1 30%;
+  }
+
   .footer-notices {
+    flex: 1 1 100%;
+    text-align: center;
+    padding-top: 0.5rem;
+  }
+}
+
+@media (max-width: 330px) {
+  .footer-links {
     flex: 1 1 100%;
   }
 }
