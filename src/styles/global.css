@@ -85,6 +85,17 @@ header .nav-title {
   transform: scaleX(1); /* expands to full width on hover/focus */
 }
 
+.icon-link {
+  color: var(--text-white);
+  transition: filter var(--transition-standard);
+}
+
+.icon-link:hover,
+.icon-link:focus,
+.icon-link:focus-visible {
+  filter: drop-shadow(0 0 3px var(--subway-orange));
+}
+
 section {
   padding-left: 10%;
   padding-right: 10%;
