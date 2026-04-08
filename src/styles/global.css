@@ -10,7 +10,7 @@
   --card-background: rgba(255, 255, 255, 0.55);
   --gradient-standard: linear-gradient(to bottom, var(--subway-orange), var(--brick-red));
   --transition-standard: 0.3s ease;
-  --transition-extended: 0.6s ease;
+  --transition-extended: 0.7s ease;
 }
 
 html,
@@ -260,12 +260,21 @@ section {
   color: var(--text-white);
   font-weight: 700;
   text-decoration: none;
-  transition: background-color var(--transition-extended), color var(--transition-extended);
+  /* Use a background-image to simulate the button background swiping at 60 degrees */
+  background-image: linear-gradient(120deg, white 0%, white 50%, transparent 50%, transparent 100%);
+  background-size: 200% 200%;
+  background-position: 100% 100%;
+  transition: background-position var(--transition-extended), color var(--transition-extended);
 }
 
+/**
+ * The following style rules create a swiping background effect for CTA buttons
+ * using a background-image with background-position transition.
+ * Technique adapted from: https://stackoverflow.com/a/20751998
+ */
 .cta-button:hover,
 .cta-button:focus-visible {
-  background-color: var(--text-white);
+  background-position: 0% 0%;
   color: var(--brick-red);
 }
 
