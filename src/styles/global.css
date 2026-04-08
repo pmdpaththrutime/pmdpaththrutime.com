@@ -304,6 +304,11 @@ footer {
   margin: 0;
   padding-left: 0;
   list-style: none;
+  font-size: smaller;
+}
+
+.footer-list .site-nav-link {
+  padding-bottom: 0rem;
 }
 
 .footer-list li + li {
