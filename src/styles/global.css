@@ -2,7 +2,11 @@
 
 @import "./1-variables.css";
 @import "./2-base.css";
-@import "./3-site-nav.css";
+
+@import "./3-site-nav/header.css";
+@import "./3-site-nav/footer.css";
+@import "./3-site-nav/links.css";
+
 @import "./4-layout.css";
 @import "./5-homepage.css";
 @import "./6-content-pages.css";
