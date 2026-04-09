@@ -6,6 +6,7 @@ import NasCiteLink from "../components/NasCiteLink.astro";
 import heroLogo from "../images/hero_logo.png";
 import alchasRegionMap from "../images/alchas_region_map.webp";
 import { SPOTIFY_URL, DISCORD_URL, ZENCASTR_URL } from "../constants.ts";
+import JsonAldean from "../components/JsonAldean.astro";
 
 const ctaLinks = [
   {
@@ -56,7 +57,7 @@ const characters = [
 ];
 ---
 
-<BaseLayout description="A Pokémon Mystery Dungeon TTRPG fan podcast">
+<BaseLayout description="A Pokémon Mystery Dungeon TTRPG fan podcast" includeLinkedData>
   <main>
     <section id="hero" class="hero orange-background">
       <div class="hero-content">
