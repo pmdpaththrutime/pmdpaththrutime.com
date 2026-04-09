@@ -1,0 +1,17 @@
+# Inspired by https://archive.transformativeworks.org/robots.txt
+# See https://www.robotstxt.org/robotstxt.html for documentation on how to use the robots.txt file
+
+# Implements the IETF AI Preferences draft standards
+# See https://www.aipref.dev/
+User-agent: *
+Content-Usage: train-ai=n, search=y
+Allow: /
+
+# The bot that OpenAI uses to scrape web content for training purposes.
+# See https://developers.openai.com/api/docs/bots
+User-agent: GPTBot
+Disallow: /
+
+# Common Crawl (a dataset commonly used to train LLMs)
+User-agent: CCBot
+Disallow: /
