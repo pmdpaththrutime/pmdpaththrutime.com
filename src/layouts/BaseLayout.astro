@@ -7,9 +7,9 @@ interface Props {
   title?: string;
 }
 
-const {
-  title = "Mystery Dungeon: A Path Through Time",
-} = Astro.props;
+// Concatenate page title and site title if defined, otherwise just the site title
+const { title } = Astro.props;
+const site_title = "Mystery Dungeon: A Path Through Time"
 ---
 
 <!doctype html>
@@ -17,7 +17,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title}</title>
+    <title>{ title ? title + " - " + site_title : site_title }</title>
     <meta name="creator" content="The PTT Crew" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
