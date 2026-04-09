@@ -5,10 +5,11 @@ import PageFooter from "../components/PageFooter.astro";
 
 interface Props {
   title?: string;
+  description?: string;
 }
 
 // Concatenate page title and site title if defined, otherwise just the site title
-const { title } = Astro.props;
+const { title, description } = Astro.props;
 const site_title = "Mystery Dungeon: A Path Through Time"
 ---
 
@@ -19,7 +20,9 @@ const site_title = "Mystery Dungeon: A Path Through Time"
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{ title ? title + " - " + site_title : site_title }</title>
     <meta name="creator" content="The PTT Crew" />
-    <meta name="description" content="A TTRPG actual-play podcast inspired by the Pokémon Mystery Dungeon video games" />
+    {
+      description && <meta name="description" content={description} />
+    }
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
