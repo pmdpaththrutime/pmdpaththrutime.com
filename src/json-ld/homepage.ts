@@ -47,6 +47,8 @@ export const data = {
       "copyrightYear": 2023,
       "copyrightNotice": "© ℗ 2023–2026 The PTT Crew",
       "copyrightHolder": { "@id": `${WEBSITE_ROOT_URL}/#ptt-crew` },
+      // Based on Not A Scratch in a loose sense (not legally a "derivative work")
+      "isBasedOn": { "@id": "https://www.notascratchcast.com/" },
       "about": [
         {
           "@type": "Thing",
