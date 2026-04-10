@@ -7,7 +7,7 @@ import JsonAldean from "../components/JsonAldean.astro";
 interface Props {
   title?: string;
   description?: string;
-  includeLinkedData?: boolean;
+  includeLinkedData?: object;
 }
 
 // Concatenate page title and site title if defined, otherwise just the site title
@@ -34,7 +34,7 @@ const site_title = "Mystery Dungeon: A Path Through Time"
     <link rel="icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
     {
-      includeLinkedData && <JsonAldean />
+      includeLinkedData && <JsonAldean data={includeLinkedData} />
     }
   </head>
   <body>
