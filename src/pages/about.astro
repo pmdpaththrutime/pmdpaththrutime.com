@@ -1,29 +1,75 @@
 ---
+import ExternalLink from "../components/ExternalLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
+import { WEBSITE_ROOT_URL } from "../constants";
+
+const jsonLD = {
+  "@context": "https://schema.org/",
+  "@graph": [
+    {
+      "@id": "https://www.notascratchcast.com/",
+      "@type": "PodcastSeries",
+      "name": "Not A Scratch",
+      "description": "A Pokémon Mystery Dungeon TTRPG podcast started in 2020",
+      "startDate": "2020-06-05T03:24:13Z",
+    },
+    {
+      "@id": "https://notascratch.fandom.com/wiki/Alchas_region",
+      "@type": "Place",
+      "name": "Alchas region",
+      "description": "Fictional setting of Not A Scratch and Mystery Dungeon: A Path Through Time",
+      "subjectOf": [
+        { "@id": "https://www.notascratchcast.com/" },
+        { "@id": `${WEBSITE_ROOT_URL}/#podcast` },
+      ]
+    },
+  ]
+};
 
 ---
-<BaseLayout title="About" description="A Pokémon Mystery Dungeon TTRPG fan podcast">
+<BaseLayout title="About" description="A Pokémon Mystery Dungeon TTRPG fan podcast"
+    includeLinkedData={jsonLD}>
   <main class="orange-background">
     <div id="hero" class="hero">
-      <h1>About Our Podcast</h1>
+      <h1>About the Podcast</h1>
     </div>
 
     <div class="content-page-container">
       <article class="cream-background content-page">
         <p>
+          <b>Mystery Dungeon: A Path Through Time</b> (<b>PTT</b>) is an original
+          Pokémon TTRPG fan podcast.
+        </p>
+
+        <p>
+          Inspired by the <cite>Pokémon Mystery Dungeon</cite> video game series, the
+          PTT campaign is set in the
+          <ExternalLink href="https://notascratch.fandom.com/wiki/Alchas_region">Alchas region</ExternalLink>,
+          an industrialized society in which
+          Pokémon do all the things humans do in our world: talk, sing, go to school,
+          play sports and video games&hellip; and even commit crimes. Sometimes.
+        </p>
+        <!-- <p>
           <b>Mystery Dungeon: A Path Through Time</b> (<b>PTT</b>) is a
-          <cite>Pokémon Mystery Dungeon</cite> fan podcast that 
+          <cite>Pokémon Mystery Dungeon</cite>&ndash;inspired TTRPG actual play fan podcast
+          that centers original storytelling and Pokémon characters.
+        </p>
+
+
+        <p>
+          fan podcast that 
           
           TTRPG actual play
           podcast that follows a group of young Pokémon as they investigate the
           mystery of the spacetime rifts popping up
-        </p>
-        <p>
-          <i>Have any questions that aren't answered here? Check out our <a href="/faq">FAQ page</a>.</i>
-        </p>
+        </p> -->
         <p>
           TODO This is where the detailed two- or three-paragraph summary of the show
           will go. This should be evergreen, SEO-optimized, and not very plot-heavy.
+        </p>
+
+        <p>
+          <i>Have any questions that aren't answered here? Check out our <a href="/faq">FAQ page</a>.</i>
         </p>
       </article>
     </div>
