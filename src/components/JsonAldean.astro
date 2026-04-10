@@ -36,7 +36,7 @@ const data = {
       "description": "A Pokémon Mystery Dungeon TTRPG fan podcast",
       "webFeed": RSS_URL, // PodcastSeries.webFeed represents the RSS feed
       "startDate": "2023-10-22T05:49:14Z", // based on the date Arc 1 Episode 1 was published
-      "genre": ["Actual Play", "Tabletop RPG", "Fantasy", "Fanwork"],
+      "genre": ["Actual Play", "Fantasy", "Comedy", "Fanwork"],
       "inLanguage": "en",
       "url": ZENCASTR_URL, // main URL where the podcast can be found
       "sameAs": [
@@ -50,11 +50,18 @@ const data = {
       "copyrightYear": 2023,
       "copyrightNotice": "© ℗ 2023–2026 The PTT Crew",
       "copyrightHolder": { "@id": `${WEBSITE_ROOT_URL}/#ptt-crew` },
-      "about": {
-        "@type": "Thing",
-        "name": "Pokémon",
-        "sameAs": "https://www.wikidata.org/wiki/Q864",
-      }
+      "about": [
+        {
+          "@type": "Thing",
+          "name": "Pokémon",
+          "sameAs": "https://www.wikidata.org/wiki/Q864",
+        },
+        {
+          "@type": "VideoGameSeries",
+          "name": "Pokémon Mystery Dungeon",
+          "sameAs": "https://www.wikidata.org/wiki/Q2100952",
+        },
+      ],
     },
     {
       // The PTT Crew (as a group)
