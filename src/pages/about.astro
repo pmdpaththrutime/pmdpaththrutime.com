@@ -2,6 +2,7 @@
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { WEBSITE_ROOT_URL, SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL } from "../constants";
 import ExternalLink from "../components/ExternalLink.astro";
+import NasCiteLink from "../components/NasCiteLink.astro";
 
 const jsonLD = {
   "@context": "https://schema.org/",
@@ -56,7 +57,13 @@ const jsonLD = {
           How's that for a summer internship?
         </p>
         <p>
-          Started in 2023, <cite>PTT</cite> is now in its fourth season, with a back catalog of over 70
+          <cite>Mystery Dungeon: A Path Through Time</cite> started in 2023 as a spinoff of <NasCiteLink/>,
+          another <cite>Pokémon Mystery Dungeon</cite>&ndash;inspired actual play podcast. We use the same
+          basic TTRPG system as <cite>Not A Scratch</cite>, and our campaign
+          takes place in the same setting but 20 years before.
+        </p>
+        <p>
+          <cite>PTT</cite> is now in its fourth season, with a back catalog of over 70
           episodes. We try to release episodes once every two weeks, but life happens (more often than
           we'd like). You can follow us on <ExternalLink href={SPOTIFY_URL}>Spotify</ExternalLink>,
           <ExternalLink href={YOUTUBE_URL}>YouTube</ExternalLink>, or anywhere else podcasts are <s>sold</s> streamed
