@@ -97,17 +97,32 @@ const characters = [
 
     <section id="story-detail" class="cream-background">
       <div class="story-detail-layout">
-        <section id="about" class="story-panel">
-          <div class="synopsis">
-            <h2>About PTT</h2>
-            <p>
-              <cite>Mystery Dungeon: A Path Through Time</cite> (<cite>PTT</cite>) is a tabletop RPG podcast
-              where we play <em>as</em> Pokémon using a homebrew game system and universe.
-              Inspired by the <cite>Pokémon Mystery Dungeon</cite> video game series, the
-              <cite>PTT</cite> campaign is set in the Alchas region,
-              an industrialized society where Pokémon do all the things humans do in our world:
-              talk, sing, go to school, play sports and video games&hellip; <i class="read-more">(<a href="/about">Read More</a>)</i>
-            </p>
+        <section id="setting" class="story-panel">
+          <div class="setting-layout">
+            <article id="setting-blurb">
+              <h2>About PTT</h2>
+              <p>
+                <cite>Mystery Dungeon: A Path Through Time</cite> (<cite>PTT</cite>) is a tabletop RPG podcast
+                where we play <em>as</em> Pokémon using a homebrew game system and universe.
+                Inspired by the <cite>Pokémon Mystery Dungeon</cite> video game series, the
+                <cite>PTT</cite> campaign is set in the Alchas region,
+                an industrialized society where Pokémon do all the things humans do in our world:
+                talk, sing, go to school, play sports and video games&hellip; <i class="read-more">(<a href="/about">Read More</a>)</i>
+              </p>
+            </article>
+
+            <figure class="setting-figure">
+              <Picture
+                src={alchasRegionMap}
+                alt="Map of the Alchas region"
+                formats={['avif', 'webp', 'png']}
+                widths={[256, 512, 657]}
+                loading="lazy"
+              />
+              <figcaption>
+                Map of the Alchas region (Credit: <NasCiteLink />)
+              </figcaption>
+            </figure>
           </div>
         </section>
 
@@ -121,31 +136,6 @@ const characters = [
                 <p>Pronouns: {character.pronouns}</p>
               </article>
             ))}
-          </div>
-        </section>
-
-        <section id="setting" class="story-panel">
-          <div class="setting-layout">
-            <article id="setting-blurb">
-              <h2>Explore the Alchas Region</h2>
-              <p>
-                Dive into the Alchas region, the unique campaign setting first
-                introduced in our sister show <NasCiteLink />.
-              </p>
-            </article>
-
-            <figure class="setting-figure">
-              <Picture
-                src={alchasRegionMap}
-                alt="Map of the Alchas region"
-                formats={['avif', 'webp', 'png']}
-                widths={[256, 512, 657]}
-                loading="lazy"
-              />
-              <figcaption>
-                Map credit: <NasCiteLink />
-              </figcaption>
-            </figure>
           </div>
         </section>
       </div>
