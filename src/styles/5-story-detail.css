@@ -22,8 +22,12 @@
 }
 
 .synopsis p {
-  font-size: 1.05rem;
-  line-height: 1.6;
+  /* font-size: 1.05rem; */
+  line-height: 1.5;
+}
+
+.read-more {
+  padding-left: 0.5em;
 }
 
 /* Character cards grid (on homepage) */
