@@ -11,3 +11,5 @@ export const AUDIBLE_URL = "https://www.audible.com/podcast/Mystery-Dungeon-a-Pa
 export const INSTAGRAM_URL = "https://www.instagram.com/pmdpaththroughtime/";
 export const BLUESKY_URL = "https://bsky.app/profile/paththrutime.pmd.social";
 export const TWITTER_URL = "https://x.com/PMDPathThruTime";
+export const RSS_URL = "https://feeds.zencastr.com/f/2vNd2pQ5.rss";
+export const WEBSITE_ROOT_URL = "https://pmdpaththrutime.netlify.app"

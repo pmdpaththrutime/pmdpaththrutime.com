@@ -1,0 +1,7 @@
+---
+// Component for injecting JSON-LD data into a web page
+
+const { data } = Astro.props;
+
+---
+{ data && <script type="application/ld+json" set:html={JSON.stringify(data)}></script> }

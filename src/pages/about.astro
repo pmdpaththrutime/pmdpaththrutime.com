@@ -1,0 +1,78 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { WEBSITE_ROOT_URL, SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL } from "../constants";
+import ExternalLink from "../components/ExternalLink.astro";
+import NasCiteLink from "../components/NasCiteLink.astro";
+
+const jsonLD = {
+  "@context": "https://schema.org/",
+  "@graph": [
+    {
+      "@id": "https://www.notascratchcast.com/",
+      "@type": "PodcastSeries",
+      "name": "Not A Scratch",
+      "description": "A Pokémon Mystery Dungeon TTRPG podcast started in 2020",
+      "startDate": "2020-06-05T03:24:13Z",
+    },
+    {
+      "@id": "https://notascratch.fandom.com/wiki/Alchas_region",
+      "@type": "Place",
+      "name": "Alchas region",
+      "description": "Fictional setting of Not A Scratch and Mystery Dungeon: A Path Through Time",
+      "subjectOf": [
+        { "@id": "https://www.notascratchcast.com/" },
+        { "@id": `${WEBSITE_ROOT_URL}/#podcast` },
+      ]
+    },
+  ]
+};
+
+---
+<BaseLayout title="About" description="A Pokémon Mystery Dungeon TTRPG fan podcast"
+    includeLinkedData={jsonLD}>
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>About the Podcast</h1>
+    </div>
+
+    <div class="content-page-container">
+      <article class="cream-background content-page">
+        <p>
+          <cite>Mystery Dungeon: A Path Through Time</cite> (<cite>PTT</cite>) is a tabletop RPG podcast
+          where we play <em>as</em> Pokémon using a homebrew game system and universe.
+          Inspired by the <cite>Pokémon Mystery Dungeon</cite> video game series, the
+          <cite>PTT</cite> campaign is set in the Alchas region,
+          an industrialized society where Pokémon do all the things humans do in our world:
+          talk, sing, go to school, play sports and video games&hellip; and even commit crimes. Sometimes.
+        </p>
+        <p>
+          The story opens in Gale Beach, a humble town on the southwestern coast of the Ventus state,
+          where four Pokémon high school seniors &mdash; <b>Hikaru the Pikachu</b>,
+          <b>Bruce the Cyndaquil</b>, <b>Sammy the Munchlax</b>, and <b>Walter the Riolu</b> &mdash;
+          encounter a big honkin' rift in the fabric of spacetime. Their discovery leads them to
+          join Project Flameback, a secretive organization led by Bruce's mom, and embark on a mission
+          to find out what's behind those spacetime rifts. This mission pits them against
+          a cult obsessed with finding three legendary Orbs with untold hidden powers,
+          as well as mob bosses, greedy shopkeepers, and record pirates.
+          How's that for a summer internship?
+        </p>
+        <p>
+          <cite>Mystery Dungeon: A Path Through Time</cite> started in 2023 as a spinoff of <NasCiteLink/>,
+          another <cite>Pokémon Mystery Dungeon</cite>&ndash;inspired actual play podcast. We use the same
+          basic TTRPG system as <cite>Not A Scratch</cite>, and our campaign
+          takes place in the same setting but 20 years before.
+        </p>
+        <p>
+          <cite>PTT</cite> is now in its fourth season, with a back catalog of over 70
+          episodes. We try to release episodes once every two weeks, but life happens (more often than
+          we'd like). You can follow us on <ExternalLink href={SPOTIFY_URL}>Spotify</ExternalLink>,
+          <ExternalLink href={YOUTUBE_URL}>YouTube</ExternalLink>, or anywhere else podcasts are <s>sold</s> streamed
+          &mdash; or you can join <ExternalLink href={DISCORD_URL}>our fan community on Discord</ExternalLink> for free.
+        </p>
+        <p>
+          <i>Have any questions that aren't answered here? Check out our <a href="/faq">FAQ</a>.</i>
+        </p>
+      </article>
+    </div>
+  </main>
+</BaseLayout>

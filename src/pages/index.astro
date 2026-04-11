@@ -6,6 +6,7 @@ import NasCiteLink from "../components/NasCiteLink.astro";
 import heroLogo from "../images/hero_logo.png";
 import alchasRegionMap from "../images/alchas_region_map.webp";
 import { SPOTIFY_URL, DISCORD_URL, ZENCASTR_URL } from "../constants.ts";
+import { data } from "../json-ld/homepage.ts";
 
 const ctaLinks = [
   {
@@ -56,7 +57,10 @@ const characters = [
 ];
 ---
 
-<BaseLayout>
+<BaseLayout
+    description="A Pokémon Mystery Dungeon TTRPG fan podcast"
+    includeLinkedData={data}
+    >
   <main>
     <section id="hero" class="hero orange-background">
       <div class="hero-content">
@@ -93,26 +97,17 @@ const characters = [
 
     <section id="story-detail" class="cream-background">
       <div class="story-detail-layout">
-        <section id="characters" class="story-panel">
-          <h2>Meet the Characters</h2>
-          <div class="character-grid">
-            {characters.map((character) => (
-              <article class="character-card">
-                <h3>{character.name}</h3>
-                <p>Species: {character.species}</p>
-                <p>Pronouns: {character.pronouns}</p>
-              </article>
-            ))}
-          </div>
-        </section>
-
         <section id="setting" class="story-panel">
           <div class="setting-layout">
             <article id="setting-blurb">
-              <h2>Explore the Alchas Region</h2>
+              <h2>About the Podcast</h2>
               <p>
-                Dive into the Alchas region, the unique campaign setting first
-                introduced in our sister show <NasCiteLink />.
+                <cite>Mystery Dungeon: A Path Through Time</cite> (<cite>PTT</cite>) is a tabletop RPG podcast
+                where we play <em>as</em> Pokémon using a homebrew game system and universe.
+                Inspired by the <cite>Pokémon Mystery Dungeon</cite> video game series, the
+                <cite>PTT</cite> campaign is set in the Alchas region,
+                an industrialized society where Pokémon do all the things humans do in our world:
+                talk, sing, go to school, play sports and video games&hellip; <i class="read-more">(<a href="/about">Read More</a>)</i>
               </p>
             </article>
 
@@ -125,9 +120,22 @@ const characters = [
                 loading="lazy"
               />
               <figcaption>
-                Credit: <NasCiteLink />
+                Map of the Alchas region (Credit: <NasCiteLink />)
               </figcaption>
             </figure>
+          </div>
+        </section>
+
+        <section id="characters" class="story-panel">
+          <h2>Meet the Characters</h2>
+          <div class="character-grid">
+            {characters.map((character) => (
+              <article class="character-card">
+                <h3>{character.name}</h3>
+                <p>Species: {character.species}</p>
+                <p>Pronouns: {character.pronouns}</p>
+              </article>
+            ))}
           </div>
         </section>
       </div>
