@@ -1,6 +1,7 @@
 /* Global Styles - Organized by context and page */
 
 /* Variables and common styles */
+@import "./1-fonts.css";
 @import "./1-variables.css";
 @import "./2-base.css";
 
