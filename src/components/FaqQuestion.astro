@@ -1,0 +1,18 @@
+---
+interface Props {
+  id?: string;
+}
+
+const { id } = Astro.props;
+---
+
+<section itemprop="mainEntity" itemscope itemtype="https://schema.org/Question" id={id}>
+  <h3 class="faq-question" itemprop="text">
+    <slot name="question" />
+  </h3>
+  <div itemprop="acceptedAnswer" itemscope itemtype="https://schema.org/Answer">
+    <div itemprop="text">
+      <slot name="answer" />
+    </div>
+  </div>
+</section>
