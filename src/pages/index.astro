@@ -35,9 +35,19 @@ const characters = [
     pronouns: "he/him",
   },
   {
+    name: "Sammy Pepperoni",
+    species: "Munchlax",
+    pronouns: "he/him",
+  },
+  {
     name: "Walter Fisthands",
     species: "Riolu",
     pronouns: "he/him",
+  },
+  {
+    name: "Blair Arkheron",
+    species: "Absol",
+    pronouns: "she/her",
   },
   {
     name: "Salena",
@@ -45,14 +55,9 @@ const characters = [
     pronouns: "she/her",
   },
   {
-    name: "Brielle",
-    species: "Umbreon",
+    name: "Caroline Flameback",
+    species: "Typhlosion",
     pronouns: "she/her",
-  },
-  {
-    name: "Abyss",
-    species: "Umbreon",
-    pronouns: "he/him",
   },
 ];
 ---
@@ -131,12 +136,15 @@ const characters = [
           <h2>Meet the Characters</h2>
           <div class="character-grid">
             {characters.map((character) => (
-              <article class="character-card">
+              <div class="character-card">
                 <h3>{character.name}</h3>
                 <p>Species: {character.species}</p>
                 <p>Pronouns: {character.pronouns}</p>
-              </article>
+              </div>
             ))}
+            <div class="character-card">
+              View more characters&hellip;
+            </div>
           </div>
         </section>
       </div>
