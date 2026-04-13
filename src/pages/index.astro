@@ -7,6 +7,8 @@ import heroLogo from "../images/hero_logo.png";
 import alchasRegionMap from "../images/alchas_region_map.webp";
 import { SPOTIFY_URL, DISCORD_URL, ZENCASTR_URL } from "../constants.ts";
 import { data } from "../json-ld/homepage.ts";
+import { characters as baseCharacters } from "../data/characters.ts";
+import { linkCharacterSpeciesData } from "../utils/pokemon-data.ts";
 
 const ctaLinks = [
   {
@@ -23,43 +25,7 @@ const ctaLinks = [
   },
 ];
 
-const characters = [
-  {
-    name: "Hikaru Hatsumi",
-    species: "Pikachu",
-    pronouns: "she/her",
-  },
-  {
-    name: "Bruce Flameback",
-    species: "Cyndaquil",
-    pronouns: "he/him",
-  },
-  {
-    name: "Sammy Pepperoni",
-    species: "Munchlax",
-    pronouns: "he/him",
-  },
-  {
-    name: "Walter Fisthands",
-    species: "Riolu",
-    pronouns: "he/him",
-  },
-  {
-    name: "Blair Arkheron",
-    species: "Absol",
-    pronouns: "she/her",
-  },
-  {
-    name: "Salena",
-    species: "Glaceon",
-    pronouns: "she/her",
-  },
-  {
-    name: "Caroline Flameback",
-    species: "Typhlosion",
-    pronouns: "she/her",
-  },
-];
+const characters = await linkCharacterSpeciesData(baseCharacters);
 ---
 
 <BaseLayout
@@ -140,6 +106,8 @@ const characters = [
                 <h3>{character.name}</h3>
                 <p>Species: {character.species}</p>
                 <p>Pronouns: {character.pronouns}</p>
+                {character.types && <p>Types: {character.types.join(", ")}</p>}
+                {character.color && <p>Color: {character.color}</p>}
               </div>
             ))}
             <div class="character-card">
