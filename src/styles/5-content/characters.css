@@ -49,27 +49,3 @@
     grid-template-columns: 1fr;
   }
 }
-
-/* Character card color variants */
-
-.character-card-yellow {
-  background: rgba(255, 214, 10, 0.45);
-  border-color: #FFD60A;
-}
-
-.character-card-black {
-  background: rgba(64, 64, 64, 0.45);
-  border-color: #303030;
-  color: #ffffff;
-}
-
-.character-card-blue {
-  background: rgba(59, 76, 202, 0.45);
-  border-color: #3B4CCA;
-  color: #ffffff;
-}
-
-.character-card-white {
-  background: rgba(248, 248, 248, 0.45);
-  border-color: #E8E8E8;
-}
