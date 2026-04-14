@@ -7,7 +7,7 @@
 .story-detail-layout {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  /* gap: 2.5rem; */
 }
 
 .story-panel h2 {
@@ -104,7 +104,13 @@
   text-align: center;
 }
 
-@media (max-width: 900px) {
+@media (max-width: 1440px) {
+  .character-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
   .character-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -138,7 +144,7 @@
   border-color: #E8E8E8;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 700px) {
   .character-grid {
     grid-template-columns: 1fr;
   }
