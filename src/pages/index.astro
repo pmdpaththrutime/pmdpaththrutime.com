@@ -7,6 +7,9 @@ import heroLogo from "../images/hero_logo.png";
 import alchasRegionMap from "../images/alchas_region_map.webp";
 import { SPOTIFY_URL, DISCORD_URL, ZENCASTR_URL } from "../constants.ts";
 import { data } from "../json-ld/homepage.ts";
+import { characters } from "../data/characters.ts";
+import PmdSprite from "../components/PmdSprite.astro";
+import ExternalLink from "../components/ExternalLink.astro";
 
 const ctaLinks = [
   {
@@ -20,39 +23,6 @@ const ctaLinks = [
   {
     href: ZENCASTR_URL,
     label: "Browse All Episodes",
-  },
-];
-
-const characters = [
-  {
-    name: "Hikaru Hatsumi",
-    species: "Pikachu",
-    pronouns: "she/her",
-  },
-  {
-    name: "Bruce Flameback",
-    species: "Cyndaquil",
-    pronouns: "he/him",
-  },
-  {
-    name: "Walter Fisthands",
-    species: "Riolu",
-    pronouns: "he/him",
-  },
-  {
-    name: "Salena",
-    species: "Glaceon",
-    pronouns: "she/her",
-  },
-  {
-    name: "Brielle",
-    species: "Umbreon",
-    pronouns: "she/her",
-  },
-  {
-    name: "Abyss",
-    species: "Umbreon",
-    pronouns: "he/him",
   },
 ];
 ---
@@ -128,16 +98,23 @@ const characters = [
         </section>
 
         <section id="characters" class="page-section story-panel">
-          <h2>Meet the Characters</h2>
+          <h2>Get to Know the Rift Riders!</h2>
           <div class="character-grid">
             {characters.map((character) => (
-              <article class="character-card">
+              <div class="character-card">
                 <h3>{character.name}</h3>
-                <p>Species: {character.species}</p>
-                <p>Pronouns: {character.pronouns}</p>
-              </article>
+                <p>{character.species} &middot; {character.pronouns}</p>
+                { character.sprite && <PmdSprite spriteData={character.sprite} size={80} />}
+              </div>
             ))}
+            <div class="character-card">
+              View more characters&hellip;
+            </div>
           </div>
+          <small class="ip-notices">
+            Sprites courtesy of <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>.
+            Fan-made sprites licensed under <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink>.
+          </small>
         </section>
       </div>
     </section>

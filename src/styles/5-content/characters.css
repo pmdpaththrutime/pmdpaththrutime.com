@@ -1,0 +1,51 @@
+/* Character cards grid (on homepage) */
+
+.character-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.character-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 8rem;
+  padding: 1rem;
+  border: var(--card-border);
+  border-radius: var(--card-radius);
+  background: var(--card-background);
+  text-align: center;
+}
+
+.character-card h3 {
+  margin-top: 0.6rem;
+  margin-bottom: 0;
+  font-size: 1.05rem;
+}
+
+.character-card p {
+  margin: 0.75em 0 0;
+  font-size: 0.9rem;
+}
+
+/* Media queries for adjusting grid size on smaller screens */
+
+@media (max-width: 1440px) {
+  .character-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 1100px) {
+  .character-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .character-grid {
+    grid-template-columns: 1fr;
+  }
+}

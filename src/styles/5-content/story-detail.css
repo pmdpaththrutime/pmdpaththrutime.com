@@ -7,7 +7,7 @@
 .story-detail-layout {
   display: flex;
   flex-direction: column;
-  gap: 2.5rem;
+  /* gap: 2.5rem; */
 }
 
 .story-panel h2 {
@@ -30,42 +30,18 @@
   padding-left: 0.5em;
 }
 
-/* Character cards grid (on homepage) */
-
-.character-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 1rem;
-}
-
-.character-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: 8rem;
-  padding: 1rem;
-  border: var(--card-border);
-  border-radius: var(--card-radius);
-  background: var(--card-background);
-  text-align: left;
-}
-
-.character-card h3 {
-  margin: 0;
-  font-size: 1.05rem;
-}
-
-.character-card p {
-  margin: 0.75rem 0 0;
-}
-
 /* Setting section layout (on homepage) */
 
 .setting-layout {
   display: flex;
   align-items: flex-start;
   gap: 1.5rem;
+}
+
+@media (max-width: 1100px) {
+  .setting-layout {
+    flex-direction: column;
+  }
 }
 
 #setting-blurb {
@@ -102,18 +78,4 @@
   text-align: center;
 }
 
-@media (max-width: 900px) {
-  .character-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
 
-  .setting-layout {
-    flex-direction: column;
-  }
-}
-
-@media (max-width: 640px) {
-  .character-grid {
-    grid-template-columns: 1fr;
-  }
-}
