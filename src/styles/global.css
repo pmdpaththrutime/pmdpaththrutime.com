@@ -15,3 +15,4 @@
 
 /* Styles for story/character/setting-related content on homepage (and possibly subpages in the future) */
 @import "./5-story-detail.css";
+@import "./5-pmd-sprites.css";

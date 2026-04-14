@@ -1,0 +1,37 @@
+---
+// Component that inserts a remote image from https://sprites.pmdcollab.org/
+// Note: Authorship information cannot be fetched programmatically from the website
+// and must be provided.
+// All fan-made images are licensed under CC BY-NC 4.0.
+import { Image } from 'astro:assets';
+
+interface PmdSpriteData {
+  speciesID: number;
+  formID?: number;
+  emotion?: string;
+  authors: string[];
+}
+
+const { spriteData, size } = Astro.props;
+
+const urlBase = "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/master/portrait/";
+
+function padFourDigits(n: number) {
+  return n.toString().padStart(4);
+}
+
+function generateSpriteUrl(spriteData: PmdSpriteData) {
+  var url = urlBase + padFourDigits(spriteData.speciesID) + "/";
+  if (spriteData.formID) {
+    url += padFourDigits(spriteData.formID) + "/";
+  }
+  url += spriteData.emotion + ".png"
+  return url;
+}
+
+const spriteUrl = generateSpriteUrl(spriteData);
+---
+<figure>
+  <Image src={spriteUrl} alt="Sprite" class="pmd-sprite" width={size} height={size} />
+  <caption>Credit: { spriteData.authors.join(", ") }</caption>
+</figure>
