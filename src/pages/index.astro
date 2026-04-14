@@ -103,7 +103,7 @@ const ctaLinks = [
             {characters.map((character) => (
               <div class="character-card">
                 <h3>{character.name}</h3>
-                <p>({character.species}, {character.pronouns})</p>
+                <p>{character.species} &middot; {character.pronouns}</p>
                 { character.sprite && <PmdSprite spriteData={character.sprite} size={80} />}
               </div>
             ))}
