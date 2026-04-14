@@ -1,3 +1,15 @@
 .pmd-sprite {
+  text-align: center;
+  width: max-content;
+}
+
+.pmd-sprite img {
   image-rendering: pixelated;
+  border: 2px solid var(--subway-orange);
+  border-radius: 4px;
+  float: center;
+}
+
+.pmd-sprite-caption {
+  font-size: x-small;
 }

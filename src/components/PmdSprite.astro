@@ -5,11 +5,11 @@
 // All fan-made images are licensed under CC BY-NC 4.0.
 import { Image } from 'astro:assets';
 
-interface PmdSpriteData {
+export interface PmdSpriteData {
   speciesID: number;
   formID?: number;
   emotion?: string;
-  authors: string[];
+  authors?: string[];
 }
 
 const { spriteData, size } = Astro.props;
@@ -17,7 +17,7 @@ const { spriteData, size } = Astro.props;
 const urlBase = "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/master/portrait/";
 
 function padFourDigits(n: number) {
-  return n.toString().padStart(4);
+  return n.toString().padStart(4, "0");
 }
 
 function generateSpriteUrl(spriteData: PmdSpriteData) {
@@ -25,13 +25,13 @@ function generateSpriteUrl(spriteData: PmdSpriteData) {
   if (spriteData.formID) {
     url += padFourDigits(spriteData.formID) + "/";
   }
-  url += spriteData.emotion + ".png"
+  url += (spriteData.emotion || "Normal") + ".png"
   return url;
 }
 
 const spriteUrl = generateSpriteUrl(spriteData);
 ---
-<figure>
-  <Image src={spriteUrl} alt="Sprite" class="pmd-sprite" width={size} height={size} />
-  <caption>Credit: { spriteData.authors.join(", ") }</caption>
+<figure class="pmd-sprite">
+  <Image src={spriteUrl} alt="Sprite" width={size} height={size} />
+  <figcaption class="pmd-sprite-caption">Credit: { spriteData.authors ? spriteData.authors.join(", ") : "Chunsoft" }</figcaption>
 </figure>
