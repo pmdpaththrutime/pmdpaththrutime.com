@@ -98,13 +98,13 @@ const ctaLinks = [
         </section>
 
         <section id="characters" class="page-section story-panel">
-          <h2>Meet the Characters</h2>
+          <h2>Get to Know the Rift Riders!</h2>
           <div class="character-grid">
             {characters.map((character) => (
               <div class="character-card">
-                { character.sprite && <PmdSprite spriteData={character.sprite} size={80} />}
                 <h3>{character.name}</h3>
                 <p>({character.species}, {character.pronouns})</p>
+                { character.sprite && <PmdSprite spriteData={character.sprite} size={80} />}
               </div>
             ))}
             <div class="character-card">
