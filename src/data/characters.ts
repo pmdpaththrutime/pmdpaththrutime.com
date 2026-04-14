@@ -44,7 +44,7 @@ export const characters: CharacterData[] = [
     pronouns: "he/him",
     sprite: {
       speciesID: 447,
-      authors: ["Chunsoft", "Fearless-Quit"],
+      authors: ["Spike Chunsoft", "Fearless-Quit"],
     }
   },
   {

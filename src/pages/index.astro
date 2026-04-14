@@ -10,6 +10,7 @@ import { data } from "../json-ld/homepage.ts";
 import { characters as baseCharacters } from "../data/characters.ts";
 import { linkCharacterSpeciesData } from "../utils/pokemon-data.ts";
 import PmdSprite from "../components/PmdSprite.astro";
+import ExternalLink from "../components/ExternalLink.astro";
 
 const ctaLinks = [
   {
@@ -115,6 +116,10 @@ const characters = await linkCharacterSpeciesData(baseCharacters);
               View more characters&hellip;
             </div>
           </div>
+          <small class="ip-notices">
+            Sprites courtesy of <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>.
+            Fan-made sprites licensed under <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink>.
+          </small>
         </section>
       </div>
     </section>

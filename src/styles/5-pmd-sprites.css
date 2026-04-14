@@ -12,4 +12,9 @@
 
 .pmd-sprite-caption {
   font-size: x-small;
+  color: #2a4f5f;
+}
+
+.story-panel .ip-notices {
+  margin-top: 1rem;
 }
