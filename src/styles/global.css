@@ -14,5 +14,6 @@
 @import "./4-layout/hero.css";
 
 /* Styles for story/character/setting-related content on homepage (and possibly subpages in the future) */
-@import "./5-story-detail.css";
-@import "./5-pmd-sprites.css";
+@import "./5-content/story-detail.css";
+@import "./5-content/characters.css";
+@import "./5-content/pmd-sprites.css";
