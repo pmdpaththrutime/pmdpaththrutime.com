@@ -106,8 +106,7 @@ const characters = await linkCharacterSpeciesData(baseCharacters);
                 <h3>{character.name}</h3>
                 <p>Species: {character.species}</p>
                 <p>Pronouns: {character.pronouns}</p>
-                {character.types && <p>Types: {character.types.join(", ")}</p>}
-                {character.color && <p>Color: {character.color}</p>}
+                {character.types && <p>Type: {character.types.join("/")}</p>}
               </div>
             ))}
             <div class="character-card">
