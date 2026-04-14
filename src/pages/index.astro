@@ -7,8 +7,7 @@ import heroLogo from "../images/hero_logo.png";
 import alchasRegionMap from "../images/alchas_region_map.webp";
 import { SPOTIFY_URL, DISCORD_URL, ZENCASTR_URL } from "../constants.ts";
 import { data } from "../json-ld/homepage.ts";
-import { characters as baseCharacters } from "../data/characters.ts";
-import { linkCharacterSpeciesData } from "../utils/pokemon-data.ts";
+import { characters } from "../data/characters.ts";
 import PmdSprite from "../components/PmdSprite.astro";
 import ExternalLink from "../components/ExternalLink.astro";
 
@@ -26,8 +25,6 @@ const ctaLinks = [
     label: "Browse All Episodes",
   },
 ];
-
-const characters = await linkCharacterSpeciesData(baseCharacters);
 ---
 
 <BaseLayout
@@ -109,7 +106,6 @@ const characters = await linkCharacterSpeciesData(baseCharacters);
                 <h3>{character.name}</h3>
                 <p>Species: {character.species}</p>
                 <p>Pronouns: {character.pronouns}</p>
-                {character.types && <p>Type: {character.types.join("/")}</p>}
               </div>
             ))}
             <div class="character-card">
