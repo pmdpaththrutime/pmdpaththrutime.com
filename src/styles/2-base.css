@@ -5,7 +5,8 @@ body {
 }
 
 body {
-  font-family: 'Inter', 'Helvetica Neue', 'Arial', 'Noto Sans', sans-serif;
+  /* Use branded web font but default to system-ui before it loads */
+  font-family: 'Inter', system-ui, sans-serif;
   color: var(--text-white);
   background: var(--gradient-standard);
 }
@@ -34,7 +35,10 @@ i cite {
 }
 
 kbd {
-  font-family: 'Cascadia Code', 'Ubuntu Mono', 'Noto Sans Mono', 'Roboto Mono', 'Courier New', Courier, monospace;
+  /* We only use system fonts here because there is relatively little monospace text on
+  the website. Cascadia Code and Ubuntu Mono are available on modern Windows and Linux
+  respectively and Courier New is for legacy OSes. */
+  font-family: 'Cascadia Code', 'Ubuntu Mono', 'Courier New', monospace;
   border: 1px solid #4a5aff;
   border-radius: 3px;
   background-color: rgba(192, 220, 255, 0.5);
