@@ -48,3 +48,9 @@ kbd {
   padding-right: 2px;
   padding-bottom: 1px;
 }
+
+i.channel-name {
+  color: var(--brick-red);
+  font-weight: 600;
+  text-wrap: nowrap;
+}
