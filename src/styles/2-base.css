@@ -39,9 +39,12 @@ kbd {
   the website. Cascadia Code and Ubuntu Mono are available on modern Windows and Linux
   respectively and Courier New is for legacy OSes. */
   font-family: 'Cascadia Code', 'Ubuntu Mono', 'Courier New', monospace;
-  border: 1px solid #4a5aff;
+  font-size: 0.9rem;
+  color: var(--brick-red);
+  border: 1px solid var(--brick-red);
   border-radius: 3px;
-  background-color: rgba(192, 220, 255, 0.5);
+  background-color: rgba(255, 220, 192, 0.5);
   padding-left: 2px;
   padding-right: 2px;
+  padding-bottom: 1px;
 }
