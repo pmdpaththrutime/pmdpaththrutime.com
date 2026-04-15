@@ -5,7 +5,8 @@ body {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  /* Use branded web font but default to system-ui before it loads */
+  font-family: 'Inter', system-ui, sans-serif;
   color: var(--text-white);
   background: var(--gradient-standard);
 }
@@ -31,4 +32,25 @@ body {
 /* For nested italics */
 i cite {
   font-style: normal;
+}
+
+kbd {
+  /* We only use system fonts here because there is relatively little monospace text on
+  the website. Cascadia Code and Ubuntu Mono are available on modern Windows and Linux
+  respectively and Courier New is for legacy OSes. */
+  font-family: 'Cascadia Code', 'Ubuntu Mono', 'Courier New', monospace;
+  font-size: 0.9rem;
+  color: var(--brick-red);
+  border: 1px solid var(--brick-red);
+  border-radius: 3px;
+  background-color: rgba(255, 220, 192, 0.5);
+  padding-left: 2px;
+  padding-right: 2px;
+  padding-bottom: 1px;
+}
+
+i.channel-name {
+  color: var(--brick-red);
+  font-weight: 600;
+  text-wrap: nowrap;
 }

@@ -10,6 +10,17 @@
   /* gap: 2.5rem; */
 }
 
+.story-panel {
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  @media (max-width: 768px) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
 .story-panel h2 {
   margin-top: 0;
 }
