@@ -34,7 +34,7 @@ i cite {
 }
 
 kbd {
-  font-family: 'Cascadia Code', 'Ubuntu Mono', 'Noto Sans Mono', 'Courier New', Courier, monospace;
+  font-family: 'Cascadia Code', 'Ubuntu Mono', 'Noto Sans Mono', 'Roboto Mono', 'Courier New', Courier, monospace;
   border: 1px solid #4a5aff;
   border-radius: 3px;
   background-color: rgba(192, 220, 255, 0.5);
