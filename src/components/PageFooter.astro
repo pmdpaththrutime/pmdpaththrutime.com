@@ -63,23 +63,23 @@ const socialLinks = [
 ];
 ---
 <footer>
-  <div class="footer-column footer-links">
+  <nav class="footer-column footer-links">
     <h2 class="footer-heading">Where to Listen</h2>
     <ul class="footer-list">
       {streamingLinks.map((link) => (
         <li><NavLink href={link.href}>{link.label}</NavLink></li>
       ))}
     </ul>
-  </div>
+  </nav>
 
-  <div class="footer-column footer-links">
+  <nav class="footer-column footer-links">
     <h2 class="footer-heading">Follow Us!</h2>
     <ul class="footer-list">
       {socialLinks.map((link) => (
         <li><NavLink href={link.href}>{link.label}</NavLink></li>
       ))}
     </ul>
-  </div>
+  </nav>
 
   <div class="footer-column footer-notices">
     <small class="ip-notices">
