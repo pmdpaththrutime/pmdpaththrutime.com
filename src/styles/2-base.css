@@ -5,7 +5,7 @@ body {
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', 'Helvetica Neue', 'Arial', 'Noto Sans', sans-serif;
   color: var(--text-white);
   background: var(--gradient-standard);
 }
@@ -34,7 +34,7 @@ i cite {
 }
 
 kbd {
-  font-family: 'Courier New', Courier, monospace;
+  font-family: 'Cascadia Code', 'Ubuntu Mono', 'Noto Sans Mono', 'Courier New', Courier, monospace;
   border: 1px solid #4a5aff;
   border-radius: 3px;
   background-color: rgba(192, 220, 255, 0.5);
