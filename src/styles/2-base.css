@@ -32,3 +32,12 @@ body {
 i cite {
   font-style: normal;
 }
+
+kbd {
+  font-family: 'Courier New', Courier, monospace;
+  border: 1px solid #4a5aff;
+  border-radius: 3px;
+  background-color: rgba(192, 220, 255, 0.5);
+  padding-left: 2px;
+  padding-right: 2px;
+}

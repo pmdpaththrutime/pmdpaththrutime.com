@@ -3,7 +3,7 @@ import ExternalLink from "../components/ExternalLink.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import FaqQuestion from "../components/FaqQuestion.astro";
 
-import { SPOTIFY_URL, YOUTUBE_URL, APPLE_PODCASTS_URL, AUDIBLE_URL, LINKTREE_URL, DISCORD_URL } from "../constants.ts";
+import { SPOTIFY_URL, YOUTUBE_URL, APPLE_PODCASTS_URL, AUDIBLE_URL, LINKTREE_URL, DISCORD_URL, RSS_URL } from "../constants.ts";
 import NasCiteLink from "../components/NasCiteLink.astro";
 ---
 
@@ -34,6 +34,23 @@ import NasCiteLink from "../components/NasCiteLink.astro";
               podcast app links on our
               <ExternalLink href={LINKTREE_URL}>Linktree page</ExternalLink>.
             </p>
+          </Fragment>
+        </FaqQuestion>
+
+        <FaqQuestion id="how-to-find">
+          <Fragment slot="question">How can I find your show on Spotify, Apple Podcasts, etc.?</Fragment>
+          <Fragment slot="answer">
+            <p>
+              Most podcast apps (including Spotify, Apple Podcasts, and Pocket Casts) provide search functionality, so you
+              can search for our show by typing <kbd>mystery dungeon path through time</kbd> in the search bar. Or
+              you can just type <kbd>mystery dungeon</kbd> and <cite>PTT</cite> will usually be the first or second result.
+            </p>
+            <p>
+              Additionally, most podcast apps <em>except Spotify</em> let you follow a podcast by
+              <ExternalLink href="https://transistor.fm/add-podcast/">pasting in its RSS or Atom feed URL</ExternalLink>.
+              Our RSS feed is here: <ExternalLink href={RSS_URL}>{RSS_URL}</ExternalLink>
+            </p>
+            <p>We also provide</p>
           </Fragment>
         </FaqQuestion>
 
