@@ -1,0 +1,48 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+// This page is for the cast of PTT (actual people, not characters)
+const currentMembers = [
+  {
+    name: "Dakota (PureGlaceon)",
+    role: "PM/DM/GM",
+  },
+  {
+    name: "Evelyn",
+    role: "Hikaru",
+  },
+  {
+    name: "Eli",
+    role: "Bruce",
+  },
+  {
+    name: "Jake (RogueGeneral)",
+    role: "Walter",
+  },
+]
+---
+<BaseLayout title="Cast">
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>Cast</h1>
+    </div>
+
+    <div class="content-page-container">
+      <article class="cream-background content-page">
+        <p>
+          Meet the cast of <cite>Mystery Dungeon: A Path Through Time</cite>!
+        </p>
+        
+        <section>
+          <h2>Current Co-Hosts</h2>
+
+          <ul>
+            {currentMembers.map(member => (
+              <li><b>{member.name}</b> as {member.role}</li>
+            ))}
+          </ul>
+        </section>
+      </article>
+    </div>
+  </main>
+</BaseLayout>
