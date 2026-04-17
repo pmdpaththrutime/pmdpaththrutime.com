@@ -11,5 +11,6 @@
   --gradient-standard: linear-gradient(to bottom, var(--subway-orange), var(--brick-red));
   --transition-standard: 0.3s ease;
   --transition-extended: 0.7s ease;
+  --cta-button-main: white;
   --cta-button-alternate: var(--brick-red);
 }
