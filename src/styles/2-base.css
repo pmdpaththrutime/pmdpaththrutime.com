@@ -54,3 +54,8 @@ i.channel-name {
   font-weight: 600;
   text-wrap: nowrap;
 }
+
+.center {
+  display: grid;
+  place-items: center;
+}
