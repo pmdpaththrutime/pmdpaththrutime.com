@@ -23,6 +23,7 @@
 
 .story-panel h2 {
   margin-top: 0;
+  text-align: center;
 }
 
 .synopsis {
@@ -65,7 +66,7 @@
 }
 
 #setting-blurb p {
-  margin: 0;
+  margin-top: 0;
   font-size: 1.05rem;
   line-height: 1.6;
 }
@@ -89,4 +90,16 @@
   text-align: center;
 }
 
+/* CTA button style overrides (see main styles in hero.css) */
 
+#setting-blurb .cta-button {
+  color: var(--cta-button-alternate);
+  border-color: var(--cta-button-alternate);
+  background-color: transparent;
+  background-image: linear-gradient(120deg, var(--cta-button-alternate) 0%, var(--cta-button-alternate) 50%, transparent 50%, transparent 100%);
+}
+
+#setting-blurb .cta-button:hover,
+#setting-blurb .cta-button:focus-visible {
+  color: var(--text-white);
+}

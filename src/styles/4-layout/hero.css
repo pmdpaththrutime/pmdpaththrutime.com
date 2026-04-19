@@ -49,13 +49,13 @@
   justify-content: center;
   padding: 0.9rem 1.4rem;
   border-radius: 999px;
-  border: 2px solid var(--text-white);
+  border: 2px solid var(--cta-button-main);
   background-color: transparent;
-  color: var(--text-white);
+  color: var(--cta-button-main);
   font-weight: 700;
   text-decoration: none;
   /* Use a background-image to simulate the button background swiping at 60 degrees */
-  background-image: linear-gradient(120deg, white 0%, white 50%, transparent 50%, transparent 100%);
+  background-image: linear-gradient(120deg, var(--cta-button-main) 0%, var(--cta-button-main) 50%, transparent 50%, transparent 100%);
   background-size: 200% 200%;
   background-position: 100% 100%;
   transition: background-position var(--transition-extended), color var(--transition-extended);

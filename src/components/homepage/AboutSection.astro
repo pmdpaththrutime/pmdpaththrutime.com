@@ -1,0 +1,39 @@
+---
+import CtaButton from "../CtaButton.astro";
+import NasCiteLink from "../NasCiteLink.astro";
+import alchasRegionMap from "../../images/alchas_region_map.webp";
+import { Picture } from "astro:assets";
+---
+<section id="setting" class="story-panel">
+  <h2>About the Show</h2>
+  <div class="setting-layout">
+    <article id="setting-blurb">
+      <p>
+        Inspired by the <cite>Pokémon Mystery Dungeon</cite> video game series, the
+        <cite>PTT</cite> campaign is set in the Alchas region,
+        an industrialized society where Pokémon do all the things humans do in our world:
+        talk, work, go to school, play sports, rob banks &mdash; the whole nine yards.
+      </p>
+      <p>
+        We use a homebrew tabletop RPG system originally created by our friends at <NasCiteLink />,
+        another PMD-inspired TTRPG actual play podcast.
+      </p>
+      <div class="center">
+        <CtaButton href="/about" label="Learn more" external={false} />
+      </div>
+    </article>
+
+    <figure class="setting-figure">
+      <Picture
+        src={alchasRegionMap}
+        alt="Map of the Alchas region"
+        formats={['avif', 'webp', 'png']}
+        widths={[256, 512, 657]}
+        loading="lazy"
+      />
+      <figcaption>
+        Map of the Alchas region (Credit: <NasCiteLink />)
+      </figcaption>
+    </figure>
+  </div>
+</section>
