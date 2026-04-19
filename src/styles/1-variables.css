@@ -13,4 +13,5 @@
   --transition-extended: 0.7s ease;
   --cta-button-main: white;
   --cta-button-alternate: var(--brick-red);
+  --dialog-dismiss-time: 0.5s;
 }

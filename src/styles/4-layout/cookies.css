@@ -9,11 +9,21 @@
   max-width: 30%;
   background: var(--light-yellow);
   border: 1.5px solid var(--brick-red);
+  opacity: 0;
+  transition: 
+    display var(--dialog-dismiss-time) allow-discrete, 
+    overlay var(--dialog-dismiss-time) allow-discrete, 
+    opacity var(--dialog-dismiss-time), 
+    scale var(--dialog-dismiss-time);
   @media (max-width: 600px) {
     left: 0%;
     /* transform: translateX(-50%); */
     max-width: 90%;
   }
+}
+
+.cookie-dialog[open] {
+  opacity: 1;
 }
 
 .cookie-dialog::backdrop {
