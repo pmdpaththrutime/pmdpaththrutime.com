@@ -1,0 +1,12 @@
+---
+import CtaButton from "./CtaButton.astro";
+
+// A parody cookie consent banner.
+---
+<dialog class="cookie-dialog" open aria-modal="true" role="dialog" aria-labelledby="cookie-dialog-title">
+  <h3>Come to the dark side&hellip;</h3>
+  <p>Cookies are tasty, but we don't serve them here. We <em>will</em> assume you are OK with this.</p>
+  <button class="cta-button" onclick="document.querySelector('.cookie-dialog').close()">
+    Yeah, whatever
+  </button>
+</dialog>
