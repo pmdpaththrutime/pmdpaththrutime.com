@@ -3,7 +3,7 @@
 .cookie-dialog {
   border-radius: 1.5rem;
   position: fixed;
-  bottom: 0.3rem;
+  bottom: 0.5rem;
   left: -65%;
   z-index: 1000;
   max-width: 30%;
