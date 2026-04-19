@@ -2,14 +2,11 @@
 import { Picture } from "astro:assets";
 import CtaButton from "../components/CtaButton.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
-import NasCiteLink from "../components/NasCiteLink.astro";
 import heroLogo from "../images/hero_logo.png";
-import alchasRegionMap from "../images/alchas_region_map.webp";
 import { SPOTIFY_URL, DISCORD_URL, ZENCASTR_URL } from "../constants.ts";
 import { data } from "../json-ld/homepage.ts";
-import { characters } from "../data/characters.ts";
-import PmdSprite from "../components/PmdSprite.astro";
-import ExternalLink from "../components/ExternalLink.astro";
+import CharacterGallery from "../components/homepage/CharacterGallery.astro";
+import AboutSection from "../components/homepage/AboutSection.astro";
 
 const ctaLinks = [
   {
@@ -66,59 +63,8 @@ const ctaLinks = [
 
     <section id="story-detail" class="page-section cream-background">
       <div class="story-detail-layout">
-        <section id="characters" class="story-panel">
-          <h2>Meet the Rift Riders</h2>
-          <div class="character-grid">
-            {characters.map((character) => (
-              <div class="character-card">
-                <h3>{character.name}</h3>
-                <p>{character.species} &middot; {character.pronouns}</p>
-                { character.sprite && <PmdSprite spriteData={character.sprite} size={80} />}
-              </div>
-            ))}
-            <div class="character-card">
-              View more characters&hellip;
-            </div>
-          </div>
-          <small class="ip-notices">
-            Sprites courtesy of <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>.
-            Fan-made sprites licensed under <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink>.
-          </small>
-        </section>
-
-        <section id="setting" class="story-panel">
-          <h2>About the Show</h2>
-          <div class="setting-layout">
-            <article id="setting-blurb">
-              <p>
-                Inspired by the <cite>Pokémon Mystery Dungeon</cite> video game series, the
-                <cite>PTT</cite> campaign is set in the Alchas region,
-                an industrialized society where Pokémon do all the things humans do in our world:
-                talk, work, go to school, play sports, rob banks &mdash; the whole nine yards.
-              </p>
-              <p>
-                We use a homebrew tabletop RPG system originally created by our friends at <NasCiteLink />,
-                another PMD-inspired TTRPG actual play podcast.
-              </p>
-              <div class="center">
-                <CtaButton href="/about" label="Learn more" external={false} />
-              </div>
-            </article>
-
-            <figure class="setting-figure">
-              <Picture
-                src={alchasRegionMap}
-                alt="Map of the Alchas region"
-                formats={['avif', 'webp', 'png']}
-                widths={[256, 512, 657]}
-                loading="lazy"
-              />
-              <figcaption>
-                Map of the Alchas region (Credit: <NasCiteLink />)
-              </figcaption>
-            </figure>
-          </div>
-        </section>
+        <CharacterGallery />
+        <AboutSection />
       </div>
     </section>
   </main>

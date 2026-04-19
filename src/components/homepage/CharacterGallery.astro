@@ -1,0 +1,24 @@
+---
+import { characters } from "../../data/characters.ts";
+import PmdSprite from "../PmdSprite.astro";
+import ExternalLink from "../ExternalLink.astro";
+---
+<section id="characters" class="story-panel">
+  <h2>Meet the Rift Riders</h2>
+  <div class="character-grid">
+    {characters.map((character) => (
+      <div class="character-card">
+        <h3>{character.name}</h3>
+        <p>{character.species} &middot; {character.pronouns}</p>
+        { character.sprite && <PmdSprite spriteData={character.sprite} size={80} />}
+      </div>
+    ))}
+    <div class="character-card">
+      View more characters&hellip;
+    </div>
+  </div>
+  <small class="ip-notices">
+    Sprites courtesy of <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>.
+    Fan-made sprites licensed under <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink>.
+  </small>
+</section>
