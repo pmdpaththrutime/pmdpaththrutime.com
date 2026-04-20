@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { getOrCreateConsentRuntime } from "c15t";
+import { consentOptions } from "./consentOptions";
 
 interface SpotifyEmbedProps {
   episode?: string;
@@ -11,10 +12,7 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
 
   useEffect(() => {
     // Get the c15t runtime - this is a global singleton
-    const runtime = getOrCreateConsentRuntime({
-      consentCategories: ["necessary", "marketing", "measurement"],
-      mode: "offline",
-    });
+    const runtime = getOrCreateConsentRuntime(consentOptions);
     const store = runtime.consentStore;
 
     // Function to update state based on current consent
@@ -39,13 +37,18 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
     updateMarketingConsent();
 
     // Subscribe to consent changes
-    const unsubscribe = store.subscribe(() => {
+    const unsubscribeStore = store.subscribe(() => {
       console.log("[SpotifyEmbed] Consent store updated");
+      updateMarketingConsent();
+    });
+    const unsubscribeChanges = store.getState().subscribeToConsentChanges(() => {
+      console.log("[SpotifyEmbed] Consent preferences saved");
       updateMarketingConsent();
     });
 
     return () => {
-      unsubscribe();
+      unsubscribeStore();
+      unsubscribeChanges();
     };
   }, []);
 
@@ -54,10 +57,7 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
     : "https://open.spotify.com/embed/show/1ImfR6fAe241ATmhHHLP6C?utm_source=generator";
 
   const openConsentDialog = () => {
-    const runtime = getOrCreateConsentRuntime({
-      consentCategories: ["necessary", "marketing", "measurement"],
-      mode: "offline",
-    });
+    const runtime = getOrCreateConsentRuntime(consentOptions);
 
     runtime.consentStore.getState().setActiveUI("dialog", { force: true });
   };
