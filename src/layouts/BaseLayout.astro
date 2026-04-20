@@ -3,7 +3,7 @@ import "../styles/global.css";
 import PageHeader from "../components/PageHeader.astro";
 import PageFooter from "../components/PageFooter.astro";
 import JsonAldean from "../components/JsonAldean.astro";
-import CookieDialog from "../components/CookieDialog.astro";
+import CookieBannerWrapper from "../components/CookieBannerWrapper";
 
 interface Props {
   title?: string;
@@ -40,6 +40,7 @@ const site_title = "Mystery Dungeon: A Path Through Time"
     <link rel="sitemap" href="/sitemap-index.xml" />
   </head>
   <body>
+    <CookieBannerWrapper client:only="react" />
     <PageHeader />
     <slot />
     <PageFooter />
