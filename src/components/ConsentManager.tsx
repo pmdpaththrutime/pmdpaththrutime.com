@@ -9,7 +9,9 @@ import { consentOptions } from "./consentOptions";
 export default function ConsentManager() {
   return (
     <ConsentManagerProvider options={consentOptions}>
-      <ConsentBanner />
+      <ConsentBanner
+        layout={[["accept", "reject"], "customize"]}
+        />
       <ConsentDialog showTrigger />
     </ConsentManagerProvider>
   );
