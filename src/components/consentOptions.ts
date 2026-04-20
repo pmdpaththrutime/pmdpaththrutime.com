@@ -39,6 +39,7 @@ export const consentOptions = {
       consentDialogTitle: "c15t-cookie-title",
       consentDialogDescription: "c15t-cookie-description",
       consentDialogOverlay: "c15t-cookie-overlay",
+      consentWidgetAccordion: "c15t-cookie-widget-accordion",
       consentWidgetFooter: "c15t-cookie-footer",
       buttonPrimary: "c15t-cookie-button-primary",
       buttonSecondary: "c15t-cookie-button-secondary",
