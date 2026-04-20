@@ -12,6 +12,7 @@
 /* Layout-related styles used on homepage and subpages */
 @import "./4-layout/general.css";
 @import "./4-layout/hero.css";
+@import "./4-layout/cookies.css";
 
 /* Styles for story/character/setting-related content on homepage (and possibly subpages in the future) */
 @import "./5-content/story-detail.css";

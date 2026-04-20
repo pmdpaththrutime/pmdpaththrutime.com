@@ -9,8 +9,10 @@
   --card-radius: 1rem;
   --card-background: rgba(255, 255, 255, 0.55);
   --gradient-standard: linear-gradient(to bottom, var(--subway-orange), var(--brick-red));
+  --gradient-light: linear-gradient(210deg, var(--cream), var(--light-yellow));
   --transition-standard: 0.3s ease;
   --transition-extended: 0.7s ease;
   --cta-button-main: white;
   --cta-button-alternate: var(--brick-red);
+  --dialog-dismiss-time: 0.5s;
 }

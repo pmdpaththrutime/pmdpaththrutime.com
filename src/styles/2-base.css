@@ -21,7 +21,7 @@ body {
 }
 
 .cream-background {
-  background: linear-gradient(210deg, var(--cream), var(--light-yellow));
+  background: var(--gradient-light);
   color: black;
 }
 
