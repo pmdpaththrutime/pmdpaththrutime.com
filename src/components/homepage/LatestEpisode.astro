@@ -1,0 +1,24 @@
+---
+import SpotifyEmbed from "../SpotifyEmbed.astro";
+import ExternalLink from "../ExternalLink.astro";
+
+---
+<section id="play-latest" class="story-panel embed-section">
+  <h2>Latest Episode</h2>
+  <p>
+    Listen to the latest episode of <cite>Mystery Dungeon: A Path Through Time</cite>
+    on Spotify below:
+  </p>
+  <div class="embed-wrapper">
+    <SpotifyEmbed />
+  </div>
+  <p>Or start from the (very) beginning:</p>
+  <div class="embed-wrapper">
+    <SpotifyEmbed episode="24DkV3P8vSnV5VAZxzFH1G" />
+  </div>
+  <p><small>
+    Please note: You may need to enable third-party cookies from Spotify for the embedded
+    media players above to work properly. These cookies are set by Spotify subject to its
+    <ExternalLink href="https://www.spotify.com/legal/cookies-policy/">Cookies Policy</ExternalLink>.
+  </small></p>
+</section>

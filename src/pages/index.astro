@@ -7,6 +7,7 @@ import { SPOTIFY_URL, DISCORD_URL, ZENCASTR_URL } from "../constants.ts";
 import { data } from "../json-ld/homepage.ts";
 import CharacterGallery from "../components/homepage/CharacterGallery.astro";
 import AboutSection from "../components/homepage/AboutSection.astro";
+import LatestEpisode from "../components/homepage/LatestEpisode.astro";
 
 const ctaLinks = [
   {
@@ -63,6 +64,7 @@ const ctaLinks = [
 
     <section id="story-detail" class="page-section cream-background">
       <div class="story-detail-layout">
+        <LatestEpisode />
         <CharacterGallery />
         <AboutSection />
       </div>

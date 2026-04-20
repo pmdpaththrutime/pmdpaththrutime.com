@@ -1,0 +1,9 @@
+---
+// This component wraps the SpotifyEmbed React component with client:only
+// to ensure it runs on the client where the c15t consent store is available.
+import SpotifyEmbedComponent from "./SpotifyEmbed";
+
+const { episode } = Astro.props;
+---
+
+<SpotifyEmbedComponent client:only="react" episode={episode} />

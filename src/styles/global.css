@@ -1,5 +1,8 @@
 /* Global Styles - Organized by context and page */
 
+/* c15t consent manager styles */
+@import "@c15t/react/styles.css";
+
 /* Variables and common styles */
 @import "./1-variables.css";
 @import "./2-base.css";
