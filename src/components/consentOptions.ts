@@ -18,10 +18,14 @@ export const consentOptions = {
     messages: {
       en: {
         cookieBanner: {
-          // title: "Come to the dark side\u2026",
-          // description:
-          //   "This website uses cookies to enable certain features, such as the Spotify embedded player. You'll need to accept marketing cookies for the player to load.",
+          title: "Come to the dark side\u2026",
+          description:
+            "This website uses cookies to enable certain features, such as the Spotify embedded player.",
         },
+        common: {
+          acceptAll: "Accept All",
+          rejectAll: "Essential Cookies Only",
+        }
       },
     },
   },
