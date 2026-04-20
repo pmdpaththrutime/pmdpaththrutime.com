@@ -1,4 +1,4 @@
-import type { ConsentRuntimeOptions } from "c15t";
+import type { ConsentManagerOptions } from "@c15t/react";
 
 export const consentOptions = {
   mode: "offline",
@@ -45,4 +45,4 @@ export const consentOptions = {
       buttonSecondary: "c15t-cookie-button-secondary",
     },
   },
-} satisfies ConsentRuntimeOptions;
+} satisfies ConsentManagerOptions;
