@@ -122,5 +122,6 @@ the parent element with consentWidgetAccordion and style the children */
   .c15t-cookie-dialog-card {
     width: calc(100vw - 1rem);
     max-width: calc(100vw - 1rem);
+    background: var(--gradient-light);
   }
 }
