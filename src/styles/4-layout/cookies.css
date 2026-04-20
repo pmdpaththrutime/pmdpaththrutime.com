@@ -10,6 +10,7 @@
   border: 1.5px solid rgba(0, 0, 0, 0.7);
   outline: 1.5px solid rgba(255, 255, 255, 0.7);
   box-shadow: 0 0.75rem 2rem rgba(0, 0, 0, 0.2);
+  font-family: 'Inter', system-ui, sans-serif;
 }
 
 .c15t-cookie-banner-card {
@@ -39,7 +40,7 @@
 
 .c15t-cookie-description {
   margin-top: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0rem;
   font-size: 0.9rem;
 }
 
