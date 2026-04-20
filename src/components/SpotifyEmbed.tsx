@@ -74,7 +74,7 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
           border: "1px solid #ddd",
         }}
       >
-        <p>Loading player...</p>
+        <p>Loading player&hellip;</p>
       </div>
     );
   }
