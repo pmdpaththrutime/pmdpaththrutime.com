@@ -2,5 +2,15 @@
 // Embeds a Spotify web player for the whole podcast.
 // By default, the latest episode will be played.
 // Note that Spotify may set its own cookies in the user's browser.
+
+const { episode } = Astro.props;
+
+const embedUrl = episode ? `https://open.spotify.com/embed/episode/${episode}?utm_source=generator`
+  : "https://open.spotify.com/embed/show/1ImfR6fAe241ATmhHHLP6C?utm_source=generator";
 ---
-<iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/show/1ImfR6fAe241ATmhHHLP6C?utm_source=generator" width="100%" height="152" frameborder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+<iframe
+  data-testid="embed-iframe" style="border-radius:12px"
+  src={embedUrl} width="100%" height="152" frameborder="0" allowfullscreen=""
+  allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy">
+  Oops! Looks like your browser doesn't support iframes and can't load this embedded player.
+</iframe>
