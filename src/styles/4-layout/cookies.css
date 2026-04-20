@@ -15,7 +15,7 @@
 
 .c15t-cookie-banner-card {
   max-width: min(30rem, calc(100vw - 1rem));
-  background: var(--gradient-light);
+  background: var(--gradient-light-translucent);
 }
 
 .c15t-cookie-dialog-card {
