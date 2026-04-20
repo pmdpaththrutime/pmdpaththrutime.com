@@ -25,7 +25,7 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
         console.log("[SpotifyEmbed] Current consent state:", state);
         
         // Check if marketing category is consented
-        const marketingEnabled = state?.acceptedCategories?.includes("marketing") ?? false;
+        const marketingEnabled = state.has("marketing");
         console.log("[SpotifyEmbed] Marketing enabled:", marketingEnabled);
         
         setIsMarketingEnabled(marketingEnabled);
