@@ -103,3 +103,22 @@
 #setting-blurb .cta-button:focus-visible {
   color: var(--text-white);
 }
+
+/* Styles for Spotify embedded player wrapper & homepage section */
+
+.embed-section {
+  text-align: center;
+  width: min(100%, 880px);
+  margin: auto;
+}
+
+.embed-section small {
+  color: #444;
+  display: inline-block;
+  margin: 1rem auto 1rem;
+}
+
+.embed-wrapper {
+  width: min(100%, 640px);
+  margin: auto; /* Centers content horizontally */
+}
