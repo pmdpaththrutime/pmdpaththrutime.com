@@ -1,12 +1,39 @@
-import React from "react";
-import { useStoredCookieConsent } from "../hooks/useStoredCookieConsent";
+import React, { useState, useEffect } from "react";
+import { getOrCreateConsentRuntime } from "c15t";
 
 interface SpotifyEmbedProps {
   episode?: string;
 }
 
 export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
-  const { isMarketingEnabled, isLoaded } = useStoredCookieConsent();
+  const [isMarketingEnabled, setIsMarketingEnabled] = useState(false);
+  const [isLoaded, setIsLoaded] = useState(false);
+
+  useEffect(() => {
+    // Get the c15t runtime and subscribe to consent changes
+    const runtime = getOrCreateConsentRuntime({
+      consentCategories: ["necessary", "marketing", "analytics"],
+    });
+
+    // Function to update state based on current consent
+    const updateMarketingConsent = () => {
+      const consent = runtime.getConsent();
+      const marketingEnabled = consent?.categories?.includes("marketing") ?? false;
+      console.log("[SpotifyEmbed] Consent state updated - marketing enabled:", marketingEnabled);
+      setIsMarketingEnabled(marketingEnabled);
+      setIsLoaded(true);
+    };
+
+    // Initial check
+    updateMarketingConsent();
+
+    // Subscribe to consent changes
+    const unsubscribe = runtime.subscribe(updateMarketingConsent);
+
+    return () => {
+      unsubscribe();
+    };
+  }, []);
 
   const embedUrl = episode
     ? `https://open.spotify.com/embed/episode/${episode}?utm_source=generator`
@@ -47,9 +74,9 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
         </p>
         <button
           onClick={() => {
-            // Open the cookie banner
-            const event = new CustomEvent("openCookieBanner");
-            window.dispatchEvent(event);
+            // c15t doesn't have a built-in "open dialog" method, but the dialog
+            // will appear automatically. This is just for user feedback.
+            console.log("[SpotifyEmbed] User clicked enable button");
           }}
           style={{
             marginTop: "12px",
@@ -70,6 +97,7 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
   }
 
   // Render the Spotify iframe when consent is given
+  console.log("[SpotifyEmbed] Marketing enabled, rendering iframe");
   return (
     <iframe
       data-testid="embed-iframe"

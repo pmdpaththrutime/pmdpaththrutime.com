@@ -20,8 +20,9 @@
   "dependencies": {
     "@astrojs/react": "^5.0.3",
     "@astrojs/sitemap": "^3.7.2",
-    "@vantezzen/react-cookie-banner": "^0.1.8",
+    "@c15t/react": "^2.0.0",
     "astro-icon": "^1.1.5",
+    "c15t": "^2.0.0",
     "react": "^19.2.5",
     "react-dom": "^19.2.5"
   }
