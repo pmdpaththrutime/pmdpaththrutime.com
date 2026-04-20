@@ -92,25 +92,15 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
         }}
       >
         <p>
-          The Spotify player requires your consent to load. Please enable
-          marketing cookies to listen to our podcast.
+          The Spotify embedded player requires your consent to load. Please enable
+          marketing cookies to enjoy our content.
         </p>
         <button
           onClick={() => {
             console.log("[SpotifyEmbed] Enable button clicked - opening consent dialog");
             openConsentDialog();
           }}
-          style={{
-            marginTop: "12px",
-            padding: "10px 20px",
-            backgroundColor: "#1DB954",
-            color: "white",
-            border: "none",
-            borderRadius: "24px",
-            cursor: "pointer",
-            fontSize: "14px",
-            fontWeight: "bold",
-          }}
+          className="cta-button"
         >
           Enable Spotify Player
         </button>

@@ -52,6 +52,7 @@
   border: 2px solid var(--cta-button-main);
   background-color: transparent;
   color: var(--cta-button-main);
+  font-family: inherit;
   font-weight: 700;
   text-decoration: none;
   /* Use a background-image to simulate the button background swiping at 60 degrees */
