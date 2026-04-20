@@ -1,25 +1,20 @@
 import React from "react";
-import { getOrCreateConsentRuntime } from "c15t";
-import { ConsentBanner, ConsentDialog } from "@c15t/react";
+import { ConsentManagerProvider, ConsentBanner, ConsentDialog } from "@c15t/react";
 
 /**
- * Initialize c15t consent management
- * This runs once to set up the global consent runtime
+ * ConsentManager wraps the c15t UI components with the provider
+ * This is used as a single React island at the root of the app
  */
-const runtime = getOrCreateConsentRuntime({
-  consentCategories: ["necessary", "marketing", "analytics"],
-});
-
 export default function ConsentManager() {
   return (
-    <>
+    <ConsentManagerProvider
+      options={{
+        mode: "offline",
+        consentCategories: ["necessary", "marketing", "measurement"],
+      }}
+    >
       <ConsentBanner />
-      <ConsentDialog />
-    </>
+      <ConsentDialog showTrigger />
+    </ConsentManagerProvider>
   );
 }
-
-/**
- * Export the runtime so other components can access consent state
- */
-export { runtime };

@@ -10,17 +10,28 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
-    // Get the c15t runtime and subscribe to consent changes
+    // Get the c15t runtime - this is a global singleton
     const runtime = getOrCreateConsentRuntime({
-      consentCategories: ["necessary", "marketing", "analytics"],
+      consentCategories: ["necessary", "marketing", "measurement"],
+      mode: "offline",
     });
+    const store = runtime.consentStore;
 
     // Function to update state based on current consent
     const updateMarketingConsent = () => {
-      const consent = runtime.getConsent();
-      const marketingEnabled = consent?.categories?.includes("marketing") ?? false;
-      console.log("[SpotifyEmbed] Consent state updated - marketing enabled:", marketingEnabled);
-      setIsMarketingEnabled(marketingEnabled);
+      try {
+        // Access the store to get consent state
+        const state = store.getState();
+        console.log("[SpotifyEmbed] Current consent state:", state);
+        
+        // Check if marketing category is consented
+        const marketingEnabled = state?.acceptedCategories?.includes("marketing") ?? false;
+        console.log("[SpotifyEmbed] Marketing enabled:", marketingEnabled);
+        
+        setIsMarketingEnabled(marketingEnabled);
+      } catch (error) {
+        console.error("[SpotifyEmbed] Error reading consent state:", error);
+      }
       setIsLoaded(true);
     };
 
@@ -28,7 +39,10 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
     updateMarketingConsent();
 
     // Subscribe to consent changes
-    const unsubscribe = runtime.subscribe(updateMarketingConsent);
+    const unsubscribe = store.subscribe(() => {
+      console.log("[SpotifyEmbed] Consent store updated");
+      updateMarketingConsent();
+    });
 
     return () => {
       unsubscribe();
@@ -39,7 +53,16 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
     ? `https://open.spotify.com/embed/episode/${episode}?utm_source=generator`
     : "https://open.spotify.com/embed/show/1ImfR6fAe241ATmhHHLP6C?utm_source=generator";
 
-  // Show loading state while checking localStorage
+  const openConsentDialog = () => {
+    const runtime = getOrCreateConsentRuntime({
+      consentCategories: ["necessary", "marketing", "measurement"],
+      mode: "offline",
+    });
+
+    runtime.consentStore.getState().setActiveUI("dialog", { force: true });
+  };
+
+  // Show loading state while checking consent
   if (!isLoaded) {
     return (
       <div
@@ -74,9 +97,8 @@ export default function SpotifyEmbed({ episode }: SpotifyEmbedProps) {
         </p>
         <button
           onClick={() => {
-            // c15t doesn't have a built-in "open dialog" method, but the dialog
-            // will appear automatically. This is just for user feedback.
-            console.log("[SpotifyEmbed] User clicked enable button");
+            console.log("[SpotifyEmbed] Enable button clicked - opening consent dialog");
+            openConsentDialog();
           }}
           style={{
             marginTop: "12px",
