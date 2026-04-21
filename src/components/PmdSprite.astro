@@ -8,6 +8,7 @@ import { Image } from 'astro:assets';
 export interface PmdSpriteData {
   speciesID: number;
   formID?: number;
+  isShiny?: boolean;
   emotion?: string;
   authors?: string[];
   license?: string;
@@ -31,6 +32,12 @@ function generateSpriteUrl(spriteData: PmdSpriteData) {
   var url = urlBase + padFourDigits(spriteData.speciesID) + "/";
   if (spriteData.formID) {
     url += padFourDigits(spriteData.formID) + "/";
+    if (spriteData.isShiny) {
+      url += "0001/";
+    }
+  }
+  if (!spriteData.formID && spriteData.isShiny) {
+    url += "0000/0001/";
   }
   url += (spriteData.emotion || "Normal") + ".png"
   return url;
@@ -38,7 +45,7 @@ function generateSpriteUrl(spriteData: PmdSpriteData) {
 
 const spriteUrl = generateSpriteUrl(spriteData);
 ---
-<figure class="pmd-sprite">
+<figure class={"pmd-sprite" + (spriteData.isShiny ? " shiny" : "")}>
   <Image src={spriteUrl} alt="" width={size} height={size} />
   {!hideCaption && (
     <figcaption class="pmd-sprite-caption">

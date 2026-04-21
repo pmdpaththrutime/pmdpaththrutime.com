@@ -19,6 +19,7 @@ const characters = defineCollection({
     sprite: z.object({
       speciesID: z.number(),
       formID: z.number().optional(),
+      isShiny: z.boolean().optional(),
       emotion: z.string().optional(),
       authors: z.array(z.string()).optional(),
       license: z.string().optional(),
