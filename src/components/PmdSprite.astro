@@ -20,7 +20,7 @@ interface Props {
   hideCaption?: boolean;
 }
 
-const { spriteData, size, hideCaption } = Astro.props;
+const { spriteData, size = 80, hideCaption } = Astro.props;
 
 const urlBase = "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/master/portrait/";
 
