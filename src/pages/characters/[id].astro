@@ -2,6 +2,7 @@
 import { getCollection, render } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PmdSprite from "../../components/PmdSprite.astro";
+import PmdSpriteIpNotice from "../../components/PmdSpriteIpNotice.astro";
 
 export async function getStaticPaths() {
   const characters = await getCollection("characters");
@@ -27,7 +28,7 @@ const description = `${character.data.name}, a ${character.data.species} charact
     <div class="content-page-container">
       <article class="cream-background content-page character-profile">
         <div class="character-profile-header">
-          { character.data.sprite && <PmdSprite spriteData={character.data.sprite} size={120} />}
+          { character.data.sprite && <PmdSprite spriteData={character.data.sprite} size={120} hideCaption={true} />}
 
           <h2>{character.data.name}</h2>
 
@@ -61,6 +62,7 @@ const description = `${character.data.name}, a ${character.data.species} charact
         </div>
 
         <Content />
+        <PmdSpriteIpNotice spriteData={character.data.sprite} />
       </article>
     </div>
   </main>

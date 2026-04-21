@@ -9,6 +9,7 @@ sprite:
   emotion: Surprised
   authors:
     - 0palite
+  license: CC-BY-NC-4.0
 ---
 
 Caroline is a character in the podcast.

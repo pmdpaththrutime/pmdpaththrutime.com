@@ -10,6 +10,7 @@ sprite:
   authors:
     - Emmuffin
     - baronessfaron
+  license: CC-BY-NC-4.0
 ---
 
 Blair is a character in the podcast.

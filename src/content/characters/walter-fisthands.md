@@ -9,6 +9,7 @@ sprite:
   authors:
     - Spike Chunsoft
     - Fearless-Quit
+  license: CC-BY-NC-4.0
 ---
 
 Walter is one of the Rift Riders and one of the main characters of the podcast.

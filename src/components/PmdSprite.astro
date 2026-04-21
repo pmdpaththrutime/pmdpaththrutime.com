@@ -10,9 +10,16 @@ export interface PmdSpriteData {
   formID?: number;
   emotion?: string;
   authors?: string[];
+  license?: string;
 }
 
-const { spriteData, size } = Astro.props;
+interface Props {
+  spriteData: PmdSpriteData;
+  size?: number;
+  hideCaption?: boolean;
+}
+
+const { spriteData, size, hideCaption } = Astro.props;
 
 const urlBase = "https://raw.githubusercontent.com/PMDCollab/SpriteCollab/master/portrait/";
 
@@ -33,5 +40,9 @@ const spriteUrl = generateSpriteUrl(spriteData);
 ---
 <figure class="pmd-sprite">
   <Image src={spriteUrl} alt="" width={size} height={size} />
-  <figcaption class="pmd-sprite-caption">Credit: { spriteData.authors ? spriteData.authors.join(", ") : "Spike Chunsoft" }</figcaption>
+  {!hideCaption && (
+    <figcaption class="pmd-sprite-caption">
+      Credit: { spriteData.authors ? spriteData.authors.join(", ") : "Spike Chunsoft" }
+    </figcaption>
+  )}
 </figure>

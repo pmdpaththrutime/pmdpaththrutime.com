@@ -11,6 +11,7 @@ sprite:
   emotion: Normal
   authors:
     - baronessfaron
+  license: CC-BY-NC-4.0
 ---
 
 Hikaru is one of the Rift Riders and one of the main characters of the podcast.

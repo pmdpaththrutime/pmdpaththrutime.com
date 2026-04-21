@@ -9,6 +9,7 @@ sprite:
   emotion: Determined
   authors:
     - PhillipsYoung
+  license: CC-BY-NC-4.0
 ---
 
 Salena is a character in the podcast.

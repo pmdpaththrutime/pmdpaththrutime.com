@@ -21,6 +21,7 @@ const characters = defineCollection({
       formID: z.number().optional(),
       emotion: z.string().optional(),
       authors: z.array(z.string()).optional(),
+      license: z.string().optional(),
     }).optional(),
   }),
 });
