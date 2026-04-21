@@ -121,10 +121,6 @@
   margin: auto;
 }
 
-.embed-section small {
-  color: #444;
-}
-
 .embed-wrapper {
   width: min(100%, 640px);
   margin: auto; /* Centers content horizontally */
