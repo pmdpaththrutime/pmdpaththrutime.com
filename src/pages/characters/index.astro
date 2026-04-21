@@ -3,6 +3,7 @@ import { getCollection } from "astro:content";
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import PmdSprite from "../../components/PmdSprite.astro";
 import ExternalLink from "../../components/ExternalLink.astro";
+import PmdSpriteIpNotice from "../../components/PmdSpriteIpNotice.astro";
 
 const characters = (await getCollection("characters"))
   .sort((a, b) => {
@@ -28,10 +29,7 @@ const characters = (await getCollection("characters"))
             </a>
           ))}
         </div>
-        <small class="ip-notices">
-          Sprites courtesy of <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>.
-          Fan-made sprites licensed under <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink>.
-        </small>
+        <PmdSpriteIpNotice />
       </section>
     </div>
   </main>

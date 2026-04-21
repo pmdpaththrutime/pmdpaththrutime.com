@@ -1,8 +1,7 @@
 ---
 import { getCollection } from "astro:content";
 import PmdSprite from "../PmdSprite.astro";
-import ExternalLink from "../ExternalLink.astro";
-
+import PmdSpriteIpNotice from "../PmdSpriteIpNotice.astro";
 const characters = (await getCollection("characters"))
   .filter((character) => character.data.featured)
   .sort((a, b) => (a.data.order ?? 999) - (b.data.order ?? 999));
@@ -21,8 +20,5 @@ const characters = (await getCollection("characters"))
       View more characters&hellip;
     </a>
   </div>
-  <small class="ip-notices">
-    Sprites courtesy of <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>.
-    Fan-made sprites licensed under <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink>.
-  </small>
+  <PmdSpriteIpNotice />
 </section>

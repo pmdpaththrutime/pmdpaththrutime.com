@@ -30,3 +30,10 @@
     border-radius: 1.5rem;
   }
 }
+
+.section-footer {
+  margin-top: 1rem;
+  text-align: center;
+  color: #444;
+  font-size: smaller;
+}

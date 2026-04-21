@@ -1,6 +1,6 @@
 /* Footer styles */
 
-footer {
+.site-footer {
   display: flex;
   flex-wrap: wrap;
   gap: 1.5rem;
