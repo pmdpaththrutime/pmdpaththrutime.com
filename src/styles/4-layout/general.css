@@ -37,3 +37,8 @@
   color: #444;
   font-size: smaller;
 }
+
+.breadcrumbs {
+  margin-bottom: 1rem;
+  font-style: italic;
+}
