@@ -49,6 +49,13 @@ const description = `${character.data.name}, a ${character.data.species} charact
                 </div>
               )}
 
+              { character.data.types && (
+                <div>
+                  <dt>Type</dt>
+                  <dd>{character.data.types.join(" / ")}</dd>
+                </div>
+              )}
+
               { character.data.ability && (
                 <div>
                   <dt>Ability</dt>
@@ -56,10 +63,17 @@ const description = `${character.data.name}, a ${character.data.species} charact
                 </div>
               )}
 
-              { character.data.types && (
+              { character.data.birthPlace && (
                 <div>
-                  <dt>Type</dt>
-                  <dd>{character.data.types.join(" / ")}</dd>
+                  <dt>Hometown</dt>
+                  <dd>
+                    {[
+                      character.data.birthPlace.city,
+                      character.data.birthPlace.state,
+                      character.data.birthPlace.country,
+                    ].filter(Boolean)
+                      .join(", ")}
+                  </dd>
                 </div>
               )}
             </dl>

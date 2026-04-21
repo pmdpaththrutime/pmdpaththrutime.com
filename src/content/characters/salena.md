@@ -2,6 +2,8 @@
 name: Salena
 species: Glaceon
 pronouns: she/her
+types:
+  - Ice
 featured: true
 order: 6
 sprite:

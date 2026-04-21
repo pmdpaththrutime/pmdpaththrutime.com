@@ -2,6 +2,11 @@
 name: Walter Fisthands
 species: Riolu
 pronouns: he/him
+types:
+  - Fighting
+birthPlace:
+  city: Gale Beach
+  state: Ventus
 featured: true
 order: 4
 sprite:

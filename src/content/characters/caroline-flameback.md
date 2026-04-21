@@ -2,6 +2,8 @@
 name: Caroline Flameback
 species: Typhlosion
 pronouns: she/her
+types:
+  - Fire
 featured: true
 order: 7
 sprite:

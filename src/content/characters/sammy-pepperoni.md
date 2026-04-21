@@ -2,6 +2,11 @@
 name: Sammy Pepperoni
 species: Munchlax
 pronouns: he/him
+types:
+  - Normal
+birthPlace:
+  city: Gale Beach
+  state: Ventus
 featured: true
 order: 3
 sprite:

@@ -2,6 +2,8 @@
 name: Silver
 species: Espeon
 pronouns: she/her
+types:
+  - Psychic
 featured: false
 sprite:
   speciesID: 196

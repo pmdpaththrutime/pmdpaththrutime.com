@@ -14,6 +14,11 @@ const characters = defineCollection({
     ability: z.string().optional(),
     types: z.array(z.string()).optional(),
     color: z.string().optional(),
+    birthPlace: z.object({
+      city: z.string().optional(),
+      state: z.string().optional(),
+      country: z.string().optional(),
+    }).optional(),
     featured: z.boolean().default(false),
     order: z.number().optional(),
     sprite: z.object({

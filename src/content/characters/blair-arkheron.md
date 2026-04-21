@@ -2,6 +2,11 @@
 name: Blair Arkheron
 species: Absol
 pronouns: she/her
+types:
+  - Dark
+birthPlace:
+  city: Vulcanburg
+  state: Flamma
 featured: true
 order: 5
 sprite:

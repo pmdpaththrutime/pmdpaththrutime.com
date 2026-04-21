@@ -3,6 +3,11 @@ name: Hikaru Hatsumi
 species: Pikachu
 pronouns: she/her
 ability: Static
+types:
+  - Electric
+birthPlace:
+  city: Gale Beach
+  state: Ventus
 featured: true
 order: 1
 sprite:
