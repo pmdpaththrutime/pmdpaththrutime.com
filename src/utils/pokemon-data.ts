@@ -1,6 +1,10 @@
-import type { CharacterData } from '../data/characters';
-
 const POKEAPI_GRAPHQL_ENDPOINT = 'https://graphql.pokeapi.co/v1beta2';
+
+interface CharacterData {
+  species: string;
+  color?: string;
+  types?: string[];
+}
 
 interface SpeciesData {
   name: string;
@@ -33,7 +37,7 @@ function toTitleCase(str: string): string {
 }
 
 /**
- * Fetch Pokemon type and color data from PokeAPI GraphQL and enrich character data
+ * Fetch Pokémon type and color data from PokeAPI GraphQL and enrich character data
  */
 const linkCharacterSpeciesData = async function (
   characterData: CharacterData[]
@@ -121,13 +125,13 @@ const linkCharacterSpeciesData = async function (
 
     if (!color) {
       throw new Error(
-        `Pokemon species "${character.species}" color not found in PokeAPI`
+        `Pokémon species "${character.species}" color not found in PokeAPI`
       );
     }
 
     if (!types) {
       throw new Error(
-        `Pokemon species "${character.species}" types not found in PokeAPI`
+        `Pokémon species "${character.species}" types not found in PokeAPI`
       );
     }
 

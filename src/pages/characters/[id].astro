@@ -1,0 +1,65 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PmdSprite from "../../components/PmdSprite.astro";
+
+export async function getStaticPaths() {
+  const characters = await getCollection("characters");
+
+  return characters.map((character) => ({
+    params: { id: character.id },
+    props: { character },
+  }));
+}
+
+const { character } = Astro.props;
+const { Content } = await render(character);
+
+const description = `${character.data.name}, a ${character.data.species} character from Mystery Dungeon: A Path Through Time`;
+---
+
+<BaseLayout title={character.data.name} description={description}>
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>{character.data.name}</h1>
+    </div>
+
+    <div class="content-page-container">
+      <article class="cream-background content-page character-profile">
+        <div class="character-profile-header">
+          { character.data.sprite && <PmdSprite spriteData={character.data.sprite} size={120} />}
+
+          <dl class="character-profile-meta">
+            <div>
+              <dt>Species</dt>
+              <dd>{character.data.species}</dd>
+            </div>
+
+            { character.data.pronouns && (
+              <div>
+                <dt>Pronouns</dt>
+                <dd>{character.data.pronouns}</dd>
+              </div>
+            )}
+
+            { character.data.ability && (
+              <div>
+                <dt>Ability</dt>
+                <dd>{character.data.ability}</dd>
+              </div>
+            )}
+
+            { character.data.types && (
+              <div>
+                <dt>Type</dt>
+                <dd>{character.data.types.join(" / ")}</dd>
+              </div>
+            )}
+          </dl>
+        </div>
+
+        <Content />
+      </article>
+    </div>
+  </main>
+</BaseLayout>
