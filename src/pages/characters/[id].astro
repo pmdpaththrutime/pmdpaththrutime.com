@@ -33,35 +33,37 @@ const description = `${character.data.name}, a ${character.data.species} charact
         <div class="character-profile-header">
           { character.data.sprite && <PmdSprite spriteData={character.data.sprite} size={120} hideCaption={true} />}
 
-          <h2>{character.data.name}</h2>
+          <div class="character-profile-details">
+            <h2>{character.data.name}</h2>
 
-          <dl class="character-profile-meta">
-            <div>
-              <dt>Species</dt>
-              <dd>{character.data.species}</dd>
-            </div>
-
-            { character.data.pronouns && (
+            <dl class="character-profile-meta">
               <div>
-                <dt>Pronouns</dt>
-                <dd>{character.data.pronouns}</dd>
+                <dt>Species</dt>
+                <dd>{character.data.species}</dd>
               </div>
-            )}
 
-            { character.data.ability && (
-              <div>
-                <dt>Ability</dt>
-                <dd>{character.data.ability}</dd>
-              </div>
-            )}
+              { character.data.pronouns && (
+                <div>
+                  <dt>Pronouns</dt>
+                  <dd>{character.data.pronouns}</dd>
+                </div>
+              )}
 
-            { character.data.types && (
-              <div>
-                <dt>Type</dt>
-                <dd>{character.data.types.join(" / ")}</dd>
-              </div>
-            )}
-          </dl>
+              { character.data.ability && (
+                <div>
+                  <dt>Ability</dt>
+                  <dd>{character.data.ability}</dd>
+                </div>
+              )}
+
+              { character.data.types && (
+                <div>
+                  <dt>Type</dt>
+                  <dd>{character.data.types.join(" / ")}</dd>
+                </div>
+              )}
+            </dl>
+          </div>
         </div>
 
         <Content />
