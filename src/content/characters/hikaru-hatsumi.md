@@ -2,6 +2,7 @@
 name: Hikaru Hatsumi
 species: Pikachu
 pronouns: she/her
+ability: Static
 featured: true
 order: 1
 sprite:
