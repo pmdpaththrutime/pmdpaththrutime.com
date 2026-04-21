@@ -17,6 +17,7 @@
   border-radius: var(--card-radius);
   background: var(--card-background);
   text-align: center;
+  transition: border-color var(--transition-standard);
 }
 
 a.character-card {
@@ -26,7 +27,7 @@ a.character-card {
 
 .character-card:hover,
 .character-card:focus-visible {
-  border-color: var(--brick-red);
+  border-color: var(--subway-orange);
 }
 
 .character-card h3 {
