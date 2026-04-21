@@ -8,8 +8,7 @@ sprite:
   speciesID: 447
   authors:
     - Spike Chunsoft
-    - Fearless-Quit
-  license: CC-BY-NC-4.0
+  # Sprite is credited to Fearless-Quit on PMDCollab but is identical to official Chunsoft sprite
 ---
 
 Walter is one of the Rift Riders and one of the main characters of the podcast.
