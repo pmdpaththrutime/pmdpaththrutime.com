@@ -19,4 +19,14 @@ sprite:
   license: CC-BY-NC-4.0
 ---
 
-Hikaru is one of the Rift Riders and one of the main characters of the podcast.
+Hikaru Hatsumi's dream is to become the world's greatest Pokémon pop idol.
+She's a talented singer with a kind heart, good grades, and a love for bubble tea and
+all things Pinap Berries.
+
+After graduating from Gale Beach High School, Hikaru joined Project Flameback alongside
+her classmates [Bruce](/characters/bruce-flameback), [Sammy](/characters/sammy-pepperoni),
+and [Walter](/characters/walter-fisthands), in their mission to find out why spacetime
+rifts have been appearing across the Alchas region.
+
+She's agile in battle, using Trailblaze (which she taught herself from a TM) to boost her
+Speed stat and then dealing enhanced damage with Electro Ball.
