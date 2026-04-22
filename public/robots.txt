@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Disallow: /characters/ # Character pages aren't ready yet!
