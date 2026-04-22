@@ -8,6 +8,9 @@ types:
 birthPlace:
   city: Vulcanburg
   state: Flamma
+currentLocation:
+  city: Gale Beach
+  state: Ventus
 featured: false
 order: 1002
 sprite:

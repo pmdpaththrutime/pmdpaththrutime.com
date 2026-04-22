@@ -2,6 +2,12 @@ import { defineCollection } from "astro:content";
 import { glob } from "astro/loaders";
 import { z } from "astro/zod";
 
+const locationType = z.object({
+  city: z.string().optional(),
+  state: z.string().optional(),
+  country: z.string().optional(),
+});
+
 const characters = defineCollection({
   loader: glob({
     base: "./src/content/characters",
@@ -14,11 +20,8 @@ const characters = defineCollection({
     ability: z.string().optional(),
     types: z.array(z.string()).optional(),
     color: z.string().optional(),
-    birthPlace: z.object({
-      city: z.string().optional(),
-      state: z.string().optional(),
-      country: z.string().optional(),
-    }).optional(),
+    birthPlace: locationType.optional(),
+    currentLocation: locationType.optional(),
     featured: z.boolean().default(false),
     order: z.number().optional(),
     sprite: z.object({

@@ -8,6 +8,9 @@ types:
 birthPlace:
   city: Briney Breeze Island
   state: Lux
+currentLocation:
+  city: Gale Beach
+  state: Ventus
 featured: false
 order: 1001
 sprite:

@@ -76,6 +76,20 @@ const description = `${character.data.name}, a ${character.data.species} charact
                   </dd>
                 </div>
               )}
+
+              { character.data.currentLocation && (
+                <div>
+                  <dt>Current Location</dt>
+                  <dd>
+                    {[
+                      character.data.currentLocation.city,
+                      character.data.currentLocation.state,
+                      character.data.currentLocation.country,
+                    ].filter(Boolean)
+                      .join(", ")}
+                  </dd>
+                </div>
+              )}
             </dl>
           </div>
         </div>
