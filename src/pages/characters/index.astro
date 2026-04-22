@@ -1,0 +1,35 @@
+---
+import { getCollection } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PmdSprite from "../../components/PmdSprite.astro";
+import PmdSpriteIpNotice from "../../components/PmdSpriteIpNotice.astro";
+
+const characters = (await getCollection("characters"))
+  .sort((a, b) => {
+    const order = (a.data.order ?? 999) - (b.data.order ?? 999);
+    return order || a.data.name.localeCompare(b.data.name);
+  });
+---
+
+<BaseLayout title="Characters" description="Character profiles for Mystery Dungeon: A Path Through Time">
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>Characters</h1>
+    </div>
+
+    <div class="content-page-container">
+      <section class="cream-background content-page">
+        <div class="character-grid">
+          {characters.map((character) => (
+            <a class="character-card" href={`/characters/${character.id}`}>
+              <h2>{character.data.name}</h2>
+              <p>{character.data.species} &middot; {character.data.pronouns}</p>
+              { character.data.sprite && <PmdSprite spriteData={character.data.sprite} size={80} />}
+            </a>
+          ))}
+        </div>
+        <PmdSpriteIpNotice />
+      </section>
+    </div>
+  </main>
+</BaseLayout>

@@ -1,0 +1,27 @@
+---
+// Intellectual property notice for PMD Sprites.
+import ExternalLink from "./ExternalLink.astro";
+import type { PmdSpriteData } from "./PmdSprite.astro";
+
+interface Props {
+  spriteData?: PmdSpriteData;
+}
+
+const { spriteData } : Props = Astro.props;
+---
+<footer class="section-footer">
+  {!spriteData ?
+  <p>
+    Sprites courtesy of <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>.
+    Fan-made sprites licensed under <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink>.
+  </p>
+   :
+  <p>
+    Sprite credit: {spriteData?.authors?.join(", ") || "Spike Chunsoft"}
+    via <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>{
+      spriteData?.license === "CC-BY-NC-4.0" &&
+      <>, licensed under <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink></>
+    }
+  </p>
+  }
+</footer>

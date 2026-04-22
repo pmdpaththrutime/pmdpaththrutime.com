@@ -1,0 +1,109 @@
+---
+import { getCollection, render } from "astro:content";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import PmdSprite from "../../components/PmdSprite.astro";
+import PmdSpriteIpNotice from "../../components/PmdSpriteIpNotice.astro";
+
+export async function getStaticPaths() {
+  const characters = await getCollection("characters");
+
+  return characters.map((character) => ({
+    params: { id: character.id },
+    props: { character },
+  }));
+}
+
+const { character } = Astro.props;
+const { Content } = await render(character);
+
+const description = `${character.data.name}, a ${character.data.species} character from Mystery Dungeon: A Path Through Time`;
+---
+
+<BaseLayout title={character.data.name + " - Character Profile"} description={description}>
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>Character Profile</h1>
+    </div>
+
+    <div class="content-page-container">
+      <article class="cream-background content-page character-profile">
+        <nav class="breadcrumbs">
+          <a href="/characters">← Back to Characters</a>
+        </nav>
+        <div class="character-profile-header">
+          { character.data.sprite && <PmdSprite spriteData={character.data.sprite} size={120} hideCaption={true} />}
+
+          <div class="character-profile-details">
+            <h2>{character.data.name}</h2>
+
+            <dl class="character-profile-meta">
+              <div>
+                <dt>Species</dt>
+                <dd>{character.data.species}</dd>
+              </div>
+
+              { character.data.pronouns && (
+                <div>
+                  <dt>Pronouns</dt>
+                  <dd>{character.data.pronouns}</dd>
+                </div>
+              )}
+
+              { character.data.types && (
+                <div>
+                  <dt>Type</dt>
+                  <dd>{character.data.types.join(" / ")}</dd>
+                </div>
+              )}
+
+              { character.data.ability && (
+                <div>
+                  <dt>Ability</dt>
+                  <dd>{character.data.ability}</dd>
+                </div>
+              )}
+
+              { character.data.birthPlace && (
+                <div>
+                  <dt>Hometown</dt>
+                  <dd>
+                    {[
+                      character.data.birthPlace.city,
+                      character.data.birthPlace.state,
+                      character.data.birthPlace.country,
+                    ].filter(Boolean)
+                      .join(", ")}
+                  </dd>
+                </div>
+              )}
+
+              { character.data.currentLocation && (
+                <div>
+                  <dt>Current Location</dt>
+                  <dd>
+                    {[
+                      character.data.currentLocation.city,
+                      character.data.currentLocation.state,
+                      character.data.currentLocation.country,
+                    ].filter(Boolean)
+                      .join(", ")}
+                  </dd>
+                </div>
+              )}
+
+              { character.data.portrayedBy && (
+                <div>
+                  <dt>Portrayed By</dt>
+                  <dd>{character.data.portrayedBy}</dd>
+                </div>
+              )}
+            </dl>
+          </div>
+        </div>
+
+        <Content />
+        <PmdSpriteIpNotice spriteData={character.data.sprite} />
+      </article>
+    </div>
+  </main>
+</BaseLayout>
