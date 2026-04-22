@@ -7,6 +7,7 @@ types:
 birthPlace:
   city: Gale Beach
   state: Ventus
+portrayedBy: Eli
 featured: true
 order: 2
 sprite:

@@ -11,6 +11,7 @@ birthPlace:
 currentLocation:
   city: Gale Beach
   state: Ventus
+portrayedBy: Dakota
 featured: false
 order: 1001
 sprite:

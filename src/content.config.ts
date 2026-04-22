@@ -24,6 +24,7 @@ const characters = defineCollection({
     currentLocation: locationType.optional(),
     featured: z.boolean().default(false),
     order: z.number().optional(),
+    portrayedBy: z.string().optional(),
     sprite: z.object({
       speciesID: z.number(),
       formID: z.number().optional(),

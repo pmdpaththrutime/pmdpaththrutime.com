@@ -4,6 +4,7 @@ species: Espeon
 pronouns: she/her
 types:
   - Psychic
+portrayedBy: Dakota
 featured: false
 sprite:
   speciesID: 196

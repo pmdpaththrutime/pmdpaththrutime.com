@@ -8,6 +8,7 @@ types:
 birthPlace:
   city: Gale Beach
   state: Ventus
+portrayedBy: Evelyn
 featured: true
 order: 1
 sprite:

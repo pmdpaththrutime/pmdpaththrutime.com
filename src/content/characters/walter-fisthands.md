@@ -7,6 +7,7 @@ types:
 birthPlace:
   city: Gale Beach
   state: Ventus
+portrayedBy: Jake
 featured: true
 order: 4
 sprite:

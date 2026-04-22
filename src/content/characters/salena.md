@@ -4,6 +4,7 @@ species: Glaceon
 pronouns: she/her
 types:
   - Ice
+portrayedBy: Dakota
 featured: true
 order: 6
 sprite:

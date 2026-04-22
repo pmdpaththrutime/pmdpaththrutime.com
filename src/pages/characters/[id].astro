@@ -90,6 +90,13 @@ const description = `${character.data.name}, a ${character.data.species} charact
                   </dd>
                 </div>
               )}
+
+              { character.data.portrayedBy && (
+                <div>
+                  <dt>Portrayed By</dt>
+                  <dd>{character.data.portrayedBy}</dd>
+                </div>
+              )}
             </dl>
           </div>
         </div>

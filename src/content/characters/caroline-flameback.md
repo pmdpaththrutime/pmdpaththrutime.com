@@ -4,6 +4,7 @@ species: Typhlosion
 pronouns: she/her
 types:
   - Fire
+portrayedBy: Dakota
 featured: true
 order: 7
 sprite:

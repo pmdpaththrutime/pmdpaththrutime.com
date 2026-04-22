@@ -7,6 +7,7 @@ types:
 birthPlace:
   city: Gale Beach
   state: Ventus
+portrayedBy: Shawn
 featured: true
 order: 3
 sprite:

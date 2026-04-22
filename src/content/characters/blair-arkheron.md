@@ -7,6 +7,7 @@ types:
 birthPlace:
   city: Vulcanburg
   state: Flamma
+portrayedBy: Micah
 featured: true
 order: 5
 sprite:
