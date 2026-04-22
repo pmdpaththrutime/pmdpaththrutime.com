@@ -1,8 +1,26 @@
 import type { ConsentManagerOptions } from "@c15t/react";
+import { posthog } from "@c15t/scripts/posthog";
+
+const posthogApiHost = "https://us.i.posthog.com";
 
 export const consentOptions = {
   mode: "offline",
   consentCategories: ["necessary", "marketing", "measurement"],
+  scripts: [
+    posthog({
+      id: "phc_Bcg9ehqQu2pVAiL5hsEEHnzAzEdvKHYMzjCzXunfwAJ2",
+      apiHost: posthogApiHost,
+      scriptUrl: "https://us-assets.i.posthog.com/static/array.js",
+      initOptions: {
+        api_host: posthogApiHost,
+        ui_host: posthogApiHost,
+        defaults: "2026-01-30",
+        cookieless_mode: "on_reject",
+        autocapture: true,
+        person_profiles: "identified_only",
+      },
+    }),
+  ],
   offlinePolicy: {
     policyPacks: [
       {
