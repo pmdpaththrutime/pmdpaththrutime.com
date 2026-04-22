@@ -4,6 +4,7 @@ import PageHeader from "../components/PageHeader.astro";
 import PageFooter from "../components/PageFooter.astro";
 import JsonAldean from "../components/JsonAldean.astro";
 import ConsentManager from "../components/ConsentManager";
+import Posthog from "../components/posthog.astro";
 
 interface Props {
   title?: string;
@@ -38,6 +39,7 @@ const site_title = "Mystery Dungeon: A Path Through Time"
       includeLinkedData && <JsonAldean data={includeLinkedData} />
     }
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <Posthog />
   </head>
   <body>
     <ConsentManager client:only="react" />

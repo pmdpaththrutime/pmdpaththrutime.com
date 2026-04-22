@@ -11,6 +11,7 @@
   "devDependencies": {
     "@iconify-json/simple-icons": "^1.2.77",
     "@img/sharp-win32-arm64": "0.34.5",
+    "@posthog/wizard": "^2.10.0",
     "@rollup/rollup-win32-arm64-msvc": "4.60.1",
     "@types/react": "^19.2.14",
     "astro": "^6.1.4",
