@@ -17,6 +17,7 @@ export const consentOptions = {
         defaults: "2026-01-30",
         cookieless_mode: "on_reject",
         autocapture: true,
+        capture_pageview: false,
         person_profiles: "identified_only",
       },
     }),
