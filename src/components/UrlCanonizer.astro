@@ -1,0 +1,64 @@
+<script is:inline type="text/javascript">
+  // Removes only UTM params from the toolbar URL while preserving the initial URL for analytics capture.
+  function canonizeUTM() {
+    const url = new URL(window.location.href);
+    const utmParams = [];
+
+    url.searchParams.forEach((_, key) => {
+      if (key.toLowerCase().startsWith("utm_")) {
+        utmParams.push(key);
+      }
+    });
+
+    if (utmParams.length === 0) {
+      console.log("No UTM parameters detected; page URL unchanged.");
+      return;
+    }
+
+    const cleanUrl = new URL(window.location.href);
+
+    utmParams.forEach((key) => {
+      cleanUrl.searchParams.delete(key);
+    });
+
+    const replaceUrl = cleanUrl.pathname + cleanUrl.search + cleanUrl.hash;
+    history.replaceState({}, document.title, replaceUrl);
+    console.log(`Replaced page URL with ${replaceUrl}`);
+  }
+
+  function captureInitialPageview(maxAttempts, timeout) {
+    return new Promise((resolve) => {
+      let attempts = 0;
+
+      const tryCapture = () => {
+        attempts += 1;
+
+        if (window.posthog && window.posthog.__loaded) {
+          window.posthog.capture("$pageview");
+          console.log(`Captured pageview event on attempt ${attempts}`);
+          resolve();
+          return;
+        }
+
+        if (attempts >= maxAttempts) {
+          console.log(`Skipped pageview capture after ${attempts} attempts because PostHog was not ready.`);
+          resolve();
+          return;
+        }
+
+        window.setTimeout(tryCapture, timeout);
+      };
+
+      tryCapture();
+    });
+  }
+
+  function handlePageLoad() {
+    captureInitialPageview(100, 50).finally(() => {
+      console.log("Finished initial pageview capture flow; canonizing URL.");
+      canonizeUTM();
+    });
+  }
+
+  window.addEventListener("load", handlePageLoad);
+</script>

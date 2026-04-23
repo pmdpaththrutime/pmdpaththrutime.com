@@ -5,6 +5,7 @@ import PageFooter from "../components/PageFooter.astro";
 import JsonAldean from "../components/JsonAldean.astro";
 import ConsentManager from "../components/ConsentManager";
 import { WEBSITE_ROOT_URL } from "../constants";
+import UrlCanonizer from "../components/UrlCanonizer.astro";
 
 interface Props {
   title?: string;
@@ -43,59 +44,7 @@ const canonicalUrl = WEBSITE_ROOT_URL + Astro.url.pathname;
     }
     <link rel="sitemap" href="/sitemap-index.xml" />
     <link rel="canonical" href={canonicalUrl} />
-    <script type="text/javascript">
-      // Captures the initial pageview with the original URL intact, then removes only UTM params from the toolbar URL.
-      function canonizeUTM() {
-        const url = new URL(window.location.href);
-        const utmParams = [];
-
-        url.searchParams.forEach((_, key) => {
-          if (key.toLowerCase().startsWith("utm_")) {
-            utmParams.push(key);
-          }
-        });
-
-        let replaceUrl = null;
-
-        if (utmParams.length > 0) {
-          const cleanUrl = new URL(window.location.href);
-
-          utmParams.forEach((key) => {
-            cleanUrl.searchParams.delete(key);
-          });
-
-          replaceUrl = cleanUrl.pathname + cleanUrl.search + cleanUrl.hash;
-        }
-
-        const maxAttempts = 100;
-        let attempts = 0;
-
-        const captureInitialPageview = () => {
-          attempts += 1;
-
-          if (window.posthog && window.posthog.__loaded) {
-            window.posthog.capture("$pageview");
-            if (replaceUrl !== null) {
-              history.replaceState({}, document.title, replaceUrl);
-            }
-            return;
-          }
-
-          if (attempts >= maxAttempts) {
-            if (replaceUrl !== null) {
-              history.replaceState({}, document.title, replaceUrl);
-            }
-            return;
-          }
-
-          window.setTimeout(captureInitialPageview, 50);
-        };
-
-        captureInitialPageview();
-      }
-
-      window.addEventListener("load", canonizeUTM);
-    </script>
+    <UrlCanonizer />
   </head>
   <body>
     <ConsentManager client:only="react" />
