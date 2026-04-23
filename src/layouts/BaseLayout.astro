@@ -4,6 +4,7 @@ import PageHeader from "../components/PageHeader.astro";
 import PageFooter from "../components/PageFooter.astro";
 import JsonAldean from "../components/JsonAldean.astro";
 import ConsentManager from "../components/ConsentManager";
+import { WEBSITE_ROOT_URL } from "../constants";
 
 interface Props {
   title?: string;
@@ -14,6 +15,9 @@ interface Props {
 // Concatenate page title and site title if defined, otherwise just the site title
 const { title, description, includeLinkedData } = Astro.props;
 const site_title = "Mystery Dungeon: A Path Through Time"
+
+// The canonical URL for this page, without any UTM or other query parameters
+const canonicalUrl = WEBSITE_ROOT_URL + Astro.url.pathname;
 ---
 
 <!doctype html>
@@ -38,6 +42,7 @@ const site_title = "Mystery Dungeon: A Path Through Time"
       includeLinkedData && <JsonAldean data={includeLinkedData} />
     }
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="canonical" href={canonicalUrl} />
   </head>
   <body>
     <ConsentManager client:only="react" />
