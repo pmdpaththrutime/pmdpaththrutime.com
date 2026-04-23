@@ -26,7 +26,7 @@
     console.log(`Replaced page URL with ${replaceUrl}`);
   }
 
-  function captureInitialPageview(maxAttempts, timeout) {
+  function captureInitialPageview(maxAttempts, millisBtwnAttempts) {
     return new Promise((resolve) => {
       let attempts = 0;
 
@@ -46,7 +46,7 @@
           return;
         }
 
-        window.setTimeout(tryCapture, timeout);
+        window.setTimeout(tryCapture, millisBtwnAttempts);
       };
 
       tryCapture();
