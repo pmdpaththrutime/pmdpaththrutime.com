@@ -61,6 +61,21 @@ const socialLinks = [
     label: "Patreon",
   }
 ];
+
+const aboutLinks = [
+  {
+    href: "/about",
+    label: "About PTT",
+  },
+  {
+    href: "/about/faq",
+    label: "FAQ",
+  },
+  {
+    href: "/about/colophon",
+    label: "Colophon",
+  }
+];
 ---
 <footer class="site-footer">
   <nav class="footer-column footer-links">
@@ -76,6 +91,15 @@ const socialLinks = [
     <h2 class="footer-heading">Follow Us!</h2>
     <ul class="footer-list">
       {socialLinks.map((link) => (
+        <li><NavLink href={link.href}>{link.label}</NavLink></li>
+      ))}
+    </ul>
+  </nav>
+
+  <nav class="footer-column footer-links">
+    <h2 class="footer-heading">About</h2>
+    <ul class="footer-list">
+      {aboutLinks.map((link) => (
         <li><NavLink href={link.href}>{link.label}</NavLink></li>
       ))}
     </ul>
