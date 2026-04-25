@@ -1,0 +1,63 @@
+---
+import ExternalLink from "../../components/ExternalLink.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<BaseLayout title="Colophon" description="Copyright and privacy notices, open source software and image credits for the PTT podcast website">
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>Colophon</h1>
+    </div>
+
+    <div class="content-page-container">
+      <article class="cream-background content-page">
+        <p>
+          <b>Website &copy; {currentYear} The PTT Crew.</b>
+        </p>
+        <p>
+          <cite>Mystery Dungeon: A Path Through Time</cite> (<cite>PTT</cite>) &copy; &copysr; 2023-{currentYear} The PTT Crew and the persons
+          identified as performers on each episode.
+        </p>
+        <p>
+          Evelyn, a co-host of <cite>PTT</cite>, is the pseudonymous author of this website as a collective work for the purposes of the
+          Berne Convention and all national laws giving effect thereto. Portions of this website were written by other members of the cast.
+        </p>
+
+        <h2>Privacy Notice</h2>
+        <p>
+          For the purposes of the Children's Online Privacy Protection Act of 1998 (COPPA),
+          neither the <cite>PTT</cite> podcast nor this website is directed to children
+          under the age of 13, and we do not knowingly collect any personally identifiable
+          information from children under 13.
+        </p>
+
+        <h2>Open Source Software</h2>
+        <p>
+          This website is built on open source software. Software libraries, images, and assets
+          we use on this website include the following:
+        </p>
+        <ul>
+          <li>
+            The <ExternalLink href="https://astro.build/">Astro</ExternalLink> JavaScript framework is used on the backend to render web pages.
+          </li>
+          <li>
+            Cookie consent banner by <ExternalLink href="https://github.com/c15t/c15t">c15t</ExternalLink>, licensed under
+            <ExternalLink href="https://github.com/c15t/c15t/blob/main/LICENSE.md">Apache 2.0</ExternalLink> by Consent Management Inc.
+          </li>
+          <li>
+            SVG brand icons courtesy of <ExternalLink href="https://github.com/simple-icons/simple-icons">Simple Icons</ExternalLink>,
+            released under <ExternalLink href="https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md">CC0 1.0</ExternalLink>
+            by Simple Icons contributors. The logos are trademarks and/or copyrights of their respective owners.
+          </li>
+          <li>
+            <cite>Pokémon Mystery Dungeon</cite>&ndash;style character sprites courtesy of <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>.
+            Original character artwork &copy; Nintendo/Game Freak/Creatures Inc./Spike Chunsoft. Fan-made sprites are licensed under
+            <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink> by their respective authors.
+          </li>
+        </ul>
+      </article>
+    </div>
+  </main>
+</BaseLayout>
