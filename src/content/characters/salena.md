@@ -8,6 +8,8 @@ ability: Snow Cloak
 portrayedBy: Dakota
 featured: true
 order: 6
+birthPlace:
+  country: The Future
 sprite:
   speciesID: 471
   emotion: Determined
