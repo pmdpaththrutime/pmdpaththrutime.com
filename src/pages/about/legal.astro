@@ -1,0 +1,35 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<BaseLayout title="Legal Notice" description="Copyright and privacy notices for Mystery Dungeon: A Path Through Time">
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>Legal Notice</h1>
+    </div>
+
+    <div class="content-page-container">
+      <article class="cream-background content-page">
+        <h2>Copyright</h2>
+        <p>
+          <cite>Mystery Dungeon: A Path Through Time</cite> (<cite>PTT</cite>) &copy; &copysr; 2023-{currentYear} The PTT Crew and the persons
+          identified as performers on each episode.
+        </p>
+        <p>
+          All rights reserved. No portion of the podcast, including the sound recordings and underlying dramatic or literary works, may be used
+          in connection with the development of any digital voice replica or generative AI model without the express consent of the performers.
+        </p>
+
+        <h2>Privacy Notice</h2>
+        <p>
+          For the purposes of the Children's Online Privacy Protection Act of 1998 (COPPA),
+          neither the <cite>PTT</cite> podcast nor this website is directed to children
+          under the age of 13, and we do not knowingly collect any personally identifiable
+          information from children under 13.
+        </p>
+      </article>
+    </div>
+  </main>
+</BaseLayout>
