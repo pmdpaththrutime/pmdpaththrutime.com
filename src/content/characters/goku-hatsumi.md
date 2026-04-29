@@ -20,6 +20,8 @@ sprite:
   authors:
     - Emmuffin
   license: CC-BY-NC-4.0
+pageAuthors:
+  - Evelyn
 ---
 
 Goku Hatsumi is [Hikaru](/characters/hikaru-hatsumi)'s dad and a real estate broker who

@@ -1,8 +1,8 @@
 ---
-import BaseLayout from "../layouts/BaseLayout.astro";
-import { WEBSITE_ROOT_URL, SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL } from "../constants";
-import ExternalLink from "../components/ExternalLink.astro";
-import NasCiteLink from "../components/NasCiteLink.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { WEBSITE_ROOT_URL, SPOTIFY_URL, YOUTUBE_URL, DISCORD_URL } from "../../constants";
+import ExternalLink from "../../components/ExternalLink.astro";
+import NasCiteLink from "../../components/NasCiteLink.astro";
 
 const jsonLD = {
   "@context": "https://schema.org/",
@@ -32,7 +32,7 @@ const jsonLD = {
     includeLinkedData={jsonLD}>
   <main class="orange-background">
     <div id="hero" class="hero">
-      <h1>About the Podcast</h1>
+      <h1>About PTT</h1>
     </div>
 
     <div class="content-page-container">
@@ -70,7 +70,7 @@ const jsonLD = {
           &mdash; or you can join <ExternalLink href={DISCORD_URL}>our fan community on Discord</ExternalLink> for free.
         </p>
         <p>
-          <i>Have any questions that aren't answered here? Check out our <a href="/faq">FAQ</a>.</i>
+          <i>Have any questions that aren't answered here? Check out our <a href="/about/faq">FAQ</a>.</i>
         </p>
       </article>
     </div>

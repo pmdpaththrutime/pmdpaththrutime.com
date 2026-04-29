@@ -1,0 +1,49 @@
+---
+import ExternalLink from "../../components/ExternalLink.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<BaseLayout title="Colophon" description="Open source software and image credits for the PTT podcast website">
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>Colophon</h1>
+    </div>
+
+    <div class="content-page-container">
+      <article class="cream-background content-page">
+        <p>
+          Website &copy; {currentYear} The PTT Crew.
+        </p>
+        <p>
+          This website is built on open source software. Software libraries, images, and assets
+          we use on this website include the following:
+        </p>
+        <ul>
+          <li>
+            The <ExternalLink href="https://astro.build/">Astro</ExternalLink> JavaScript framework is used on the backend to render web pages.
+          </li>
+          <li>
+            Cookie consent banner by <ExternalLink href="https://github.com/c15t/c15t">c15t</ExternalLink>, licensed under
+            <ExternalLink href="https://github.com/c15t/c15t/blob/main/LICENSE.md">Apache 2.0</ExternalLink> by Consent Management Inc.
+          </li>
+          <li>
+            SVG brand icons courtesy of <ExternalLink href="https://github.com/simple-icons/simple-icons">Simple Icons</ExternalLink>,
+            released under <ExternalLink href="https://github.com/simple-icons/simple-icons/blob/develop/LICENSE.md">CC0 1.0</ExternalLink>
+            by Simple Icons contributors. The logos are trademarks and/or copyrights of their respective owners.
+          </li>
+          <li>
+            <cite>Pokémon Mystery Dungeon</cite>&ndash;style character sprites courtesy of <ExternalLink href="https://sprites.pmdcollab.org/#/">PMDCollab SpriteCollab</ExternalLink>.
+            <ul>
+              <li>Original character artwork &copy; Nintendo/Game Freak/Creatures Inc./Spike Chunsoft.</li>
+              <li>
+                Fan-made sprites are licensed under <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">CC BY-NC 4.0</ExternalLink> by their respective authors.
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </article>
+    </div>
+  </main>
+</BaseLayout>

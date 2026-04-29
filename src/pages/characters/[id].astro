@@ -17,6 +17,9 @@ const { character } = Astro.props;
 const { Content } = await render(character);
 
 const description = `${character.data.name}, a ${character.data.species} character from Mystery Dungeon: A Path Through Time`;
+
+// Formats a list as "A, B, and C"
+const formatter = new Intl.ListFormat('en', { style: 'long', type: 'conjunction' });
 ---
 
 <BaseLayout title={character.data.name + " - Character Profile"} description={description}>
@@ -102,7 +105,15 @@ const description = `${character.data.name}, a ${character.data.species} charact
         </div>
 
         <Content />
-        <PmdSpriteIpNotice spriteData={character.data.sprite} />
+        <footer class="section-footer">
+          {character.data.pageAuthors && (
+            <p>
+              Page written by {formatter.format(character.data.pageAuthors)}.
+              <PmdSpriteIpNotice spriteData={character.data.sprite} />
+            </p>
+          )
+          }
+        </footer>
       </article>
     </div>
   </main>

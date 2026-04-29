@@ -18,6 +18,8 @@ sprite:
   authors:
     - baronessfaron
   license: CC-BY-NC-4.0
+pageAuthors:
+  - Evelyn
 ---
 
 Hikaru Hatsumi's dream is to become the world's greatest Pokémon pop idol.
