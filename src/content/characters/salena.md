@@ -16,6 +16,8 @@ sprite:
   authors:
     - PhillipsYoung
   license: CC-BY-NC-4.0
+pageAuthors:
+  - Dakota
 ---
 
 Salena is a cute but self-absorbed Glaceon who loves to hang out with her friends, two Umbreon named Abyss and Brielle.

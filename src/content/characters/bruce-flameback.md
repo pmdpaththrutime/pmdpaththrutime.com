@@ -13,6 +13,8 @@ featured: true
 order: 2
 sprite:
   speciesID: 155
+pageAuthors:
+  - Eli
 ---
 
 Though he is the son of the owners/founders of Flameback Enterprises, a very successful

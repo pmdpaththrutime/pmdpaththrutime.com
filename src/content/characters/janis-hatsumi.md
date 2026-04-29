@@ -21,6 +21,8 @@ sprite:
   authors:
     - Emmuffin
   license: CC-BY-NC-4.0
+pageAuthors:
+  - Evelyn
 ---
 
 Janis Hatsumi (née Onda) is [Hikaru](/characters/hikaru-hatsumi)'s mom and the owner of

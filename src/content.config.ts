@@ -33,6 +33,7 @@ const characters = defineCollection({
       authors: z.array(z.string()).optional(),
       license: z.string().optional(),
     }).optional(),
+    pageAuthors: z.array(z.string()).optional(),
   }),
 });
 

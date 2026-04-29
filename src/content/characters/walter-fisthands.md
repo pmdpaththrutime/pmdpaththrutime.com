@@ -16,6 +16,9 @@ sprite:
   authors:
     - Spike Chunsoft
   # Sprite is credited to Fearless-Quit on PMDCollab but is identical to official Chunsoft sprite
+pageAuthors:
+  - Jake
+  - Evelyn
 ---
 
 A kid thrown into the world after escaping his household of his abusive stepfather,
