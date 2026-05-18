@@ -24,7 +24,7 @@ pageAuthors:
 
 Hikaru Hatsumi's dream is to become the world's greatest Pokémon pop idol.
 She's a talented singer with a kind heart, good grades, and a love for bubble tea and
-all things Pinap Berries.
+all things Pinap Berries. She's also lesbian.
 
 After graduating from Gale Beach High School, Hikaru joined Project Flameback alongside
 her classmates [Bruce](/characters/bruce-flameback), [Sammy](/characters/sammy-pepperoni),

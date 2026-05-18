@@ -13,6 +13,8 @@ sprite:
   authors:
     - 0palite
   license: CC-BY-NC-4.0
+pageAuthors:
+  - Dakota
 ---
 
-Caroline is a character in the podcast.
+Caroline is the mother of Bruce, and the Owner of Flameback Enterprises, the biggest Tech company in the Alchas Region. Though she keeps herself hard at work with Flameback Enterprises, she harbors many secrets and seeks to find her lost husband.
