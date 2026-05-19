@@ -13,6 +13,11 @@ order: 3
 sprite:
   speciesID: 446
   emotion: Special2
+pageAuthors:
+  - Dakota
 ---
 
-Sammy is one of the Rift Riders and one of the main characters of the podcast.
+Sammy is a food-hungry Munchlax who runs Pepperoni's Pizzeria in Gale Beach, along with
+his parents, Mr. and Mrs. Pepperoni. Sammy is very curious and like exploring things,
+but hates stairs with a passion. The one thing he hates above all else is physical
+exertion, but that's what Walter is for anyway, so no sweat there.

@@ -14,12 +14,12 @@
     "@posthog/wizard": "^2.10.0",
     "@rollup/rollup-win32-arm64-msvc": "4.60.1",
     "@types/react": "^19.2.14",
-    "astro": "^6.1.4",
+    "astro": "^6.3.5",
     "sharp": "^0.34.5",
     "typescript": "^5.0.0"
   },
   "dependencies": {
-    "@astrojs/react": "^5.0.3",
+    "@astrojs/react": "^5.0.5",
     "@astrojs/sitemap": "^3.7.2",
     "@c15t/react": "^2.0.0",
     "@c15t/scripts": "^2.0.1",
