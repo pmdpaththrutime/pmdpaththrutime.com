@@ -11,7 +11,8 @@ import {
   TWITTER_URL,
   DISCORD_URL,
   ZENCASTR_URL,
-  PATREON_URL
+  PATREON_URL,
+  SUBREDDIT_URL,
 } from "../constants.ts";
 
 const currentYear = new Date().getFullYear();
@@ -45,6 +46,10 @@ const socialLinks = [
     label: "Discord",
   },
   {
+    href: SUBREDDIT_URL,
+    label: "r/PMDTabletop",
+  },
+  {
     href: INSTAGRAM_URL,
     label: "Instagram",
   },
@@ -59,7 +64,7 @@ const socialLinks = [
   {
     href: PATREON_URL,
     label: "Patreon",
-  }
+  },
 ];
 
 const aboutLinks = [
@@ -121,7 +126,7 @@ const aboutLinks = [
       The Pokémon Company, Nintendo, Spike Chunsoft, or their affiliates.
     </small>
     <small class="ip-notices">
-      <cite>Mystery Dungeon: A Path Through Time</cite> is performed and produced by humans.
+      <cite>Mystery Dungeon: A Path Through Time</cite> is made by humans.
     </small>
   </div>
 </footer>
