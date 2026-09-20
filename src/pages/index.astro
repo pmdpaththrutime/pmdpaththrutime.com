@@ -3,7 +3,7 @@ import { Picture } from "astro:assets";
 import CtaButton from "../components/CtaButton.astro";
 import BaseLayout from "../layouts/BaseLayout.astro";
 import heroLogo from "../images/hero_logo.png";
-import { SPOTIFY_URL, DISCORD_URL, ZENCASTR_URL } from "../constants.ts";
+import { DISCORD_URL } from "../constants.ts";
 import { data } from "../json-ld/homepage.ts";
 import CharacterGallery from "../components/homepage/CharacterGallery.astro";
 import AboutSection from "../components/homepage/AboutSection.astro";
@@ -11,16 +11,12 @@ import LatestEpisode from "../components/homepage/LatestEpisode.astro";
 
 const ctaLinks = [
   {
-    href: SPOTIFY_URL,
-    label: "Listen on Spotify",
+    href: "/listen",
+    label: "Where to Listen",
   },
   {
     href: DISCORD_URL,
     label: "Join Our Discord",
-  },
-  {
-    href: ZENCASTR_URL,
-    label: "Browse All Episodes",
   },
 ];
 ---

@@ -1,0 +1,30 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import ExternalLink from "../components/ExternalLink.astro";
+import { SPOTIFY_URL, YOUTUBE_URL, APPLE_PODCASTS_URL, AUDIBLE_URL, RSS_URL, ZENCASTR_URL } from "../constants";
+---
+
+<BaseLayout title="Where to Listen">
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>Where to Listen</h1>
+    </div>
+
+    <div class="content-page-container">
+      <article class="cream-background content-page">
+        <p>Our content is available on most podcast platforms:</p>
+        <ul>
+          <li><ExternalLink href={YOUTUBE_URL}>YouTube</ExternalLink></li>
+          <li><ExternalLink href={APPLE_PODCASTS_URL}>Apple Podcasts</ExternalLink></li>
+          <li><ExternalLink href={AUDIBLE_URL}>Audible</ExternalLink></li>
+          <li><ExternalLink href={SPOTIFY_URL}>Spotify</ExternalLink></li>
+        </ul>
+        <p>
+          Additionally, most podcast apps <em>except Spotify</em> let you follow a podcast by
+          <ExternalLink href="https://transistor.fm/add-podcast/">pasting in its RSS or Atom feed URL</ExternalLink>.
+          Our RSS feed is here: <kbd><ExternalLink href={RSS_URL}>{RSS_URL}</ExternalLink></kbd>
+        </p>
+      </article>
+    </div>
+  </main>
+</BaseLayout>
