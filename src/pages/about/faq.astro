@@ -15,10 +15,20 @@ import NasCiteLink from "../../components/NasCiteLink.astro";
 
     <div class="content-page-container">
       <article class="cream-background content-page" itemscope itemtype="https://schema.org/FAQPage">
+        <FaqQuestion id="whats-your-show-about">
+          <Fragment slot="question">What's your show about?</Fragment>
+          <Fragment slot="answer">
+            <p>
+              <cite>Mystery Dungeon: A Path Through Time</cite> is a TTRPG actual-play podcast about
+              a group of talking Pokémon on a quest to save the world from growing spacetime rifts.
+            </p>
+          </Fragment>
+        </FaqQuestion>
+
         <FaqQuestion id="where-to-start">
           <Fragment slot="question">Where do I start?</Fragment>
           <Fragment slot="answer">
-            <p>We suggest starting from the beginning of Arc 3. Or anywhere, really!</p>
+            <p>We suggest starting <ExternalLink href="https://zencastr.com/z/KDq08l4D">from the beginning</ExternalLink>. Or anywhere, really!</p>
           </Fragment>
         </FaqQuestion>
 
@@ -58,6 +68,18 @@ import NasCiteLink from "../../components/NasCiteLink.astro";
               <li><ExternalLink href={AUDIBLE_URL}>Audible</ExternalLink></li>
               <li><ExternalLink href={ZENCASTR_URL}>Zencastr</ExternalLink></li>
             </ul>
+          </Fragment>
+        </FaqQuestion>
+
+        <FaqQuestion id="what-do-you-talk-about">
+          <Fragment slot="question">What do you guys talk about?</Fragment>
+          <Fragment slot="answer">
+            <p>
+              We're not a talk-show podcast. We're an actual-play podcast, so our focus is
+              on storytelling, gameplay, and having fun. That said, we often banter about
+              various topics during the intros to our story episodes, and we have released
+              some non-story episodes like <ExternalLink href="https://zencastr.com/z/9f3pSG5Q">this one</ExternalLink>.
+            </p>
           </Fragment>
         </FaqQuestion>
 
