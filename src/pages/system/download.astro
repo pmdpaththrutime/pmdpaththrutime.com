@@ -1,0 +1,60 @@
+---
+import CtaButton from "../../components/CtaButton.astro";
+import ExternalLink from "../../components/ExternalLink.astro";
+import NasCiteLink from "../../components/NasCiteLink.astro";
+import BaseLayout from "../../layouts/BaseLayout.astro";
+
+const currentYear = new Date().getFullYear();
+---
+
+<BaseLayout title="Download | PTT System">
+  <main class="orange-background">
+    <div id="hero" class="hero">
+      <h1>Download the PTT System</h1>
+    </div>
+
+    <div class="content-page-container">
+      <article class="cream-background content-page" id="download-panel">
+        <p>
+          We've released the PTT system as a free download!
+        </p>
+        <p>
+          The system was originally developed for our sister podcast <NasCiteLink/>,
+          the PTT system combines elements of <cite>Pokémon Mystery Dungeon</cite>,
+          <cite>D&amp;D 5e</cite>, and <cite>Pokémon Tabletop United</cite>.
+          In 2023, we began using the system for this show with kind permission from
+          Anirudh, the creator of <cite>Not A Scratch</cite>, and started making
+          customizations for our campaign. In 2026, we released our version of the
+          system in coordination with Anirudh.
+        </p>
+        <div class="center">
+          <CtaButton label="Download" href="/assets/download.xlsm" external={false}/>
+        </div>
+        <p>
+          The PTT system is available under a
+          <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 license</ExternalLink>.
+          You can use it in your own campaigns, podcasts, and livestreams, or modify it
+          for your own purposes, provided that you adhere to the following rules:
+        </p>
+        <ul>
+          <li>
+            <b>Attribution</b>: You must credit the authors of this work and indicate that
+            the work is available under this license by linking to the license or to this page.
+            You may do so in any reasonable manner, but not in any way that suggests endorsement
+            by us.
+          </li>
+          <li>
+            <b>NonCommercial</b>: You may not copy, distribute, or otherwise use this work
+            for commercial purposes, including any use directed toward commercial advantage
+            or monetary compensation.
+          </li>
+        </ul>
+        <p>
+          The first public release of the PTT system is version 4.5. Previous versions of
+          the system have been used internally by our co-hosts and guests and are not
+          available for public use.
+        </p>
+      </article>
+    </div>
+  </main>
+</BaseLayout>
