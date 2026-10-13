@@ -92,7 +92,8 @@
 
 /* CTA button style overrides (see main styles in hero.css) */
 
-#setting-blurb .cta-button {
+#setting-blurb .cta-button,
+#download-panel .cta-button {
   color: var(--cta-button-alternate);
   border-color: var(--cta-button-alternate);
   background-color: transparent;
@@ -109,7 +110,9 @@
 #setting-blurb .cta-button:hover,
 #setting-blurb .cta-button:focus-visible,
 .embed-wrapper .cta-button:hover,
-.embed-wrapper .cta-button:focus-visible {
+.embed-wrapper .cta-button:focus-visible,
+#download-panel .cta-button:hover,
+#download-panel .cta-button:focus-visible {
   color: var(--text-white);
 }
 
