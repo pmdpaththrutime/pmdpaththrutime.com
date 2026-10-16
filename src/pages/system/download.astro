@@ -2,9 +2,8 @@
 import CtaButton from "../../components/CtaButton.astro";
 import ExternalLink from "../../components/ExternalLink.astro";
 import NasCiteLink from "../../components/NasCiteLink.astro";
+import { DISCORD_URL } from "../../constants";
 import BaseLayout from "../../layouts/BaseLayout.astro";
-
-const currentYear = new Date().getFullYear();
 ---
 
 <BaseLayout title="Download | PTT System">
@@ -28,8 +27,13 @@ const currentYear = new Date().getFullYear();
           system in coordination with Anirudh.
         </p>
         <div class="center">
-          <CtaButton label="Download" href="/downloads/PTT_4.5_Public_Release.xlsm" external={false}/>
+          <CtaButton label="Download .xlsx (683 KiB)" href="/downloads/PTT_4.5_Public_Release.xlsx" external={false}/>
         </div>
+        <p>
+          Note: You should be able to open this file in Microsoft Excel, Google Sheets, or LibreOffice Calc.
+          Please <ExternalLink href={DISCORD_URL}>contact us on Discord</ExternalLink>
+          if you have any issues using this file.
+        </p>
         <p>
           The PTT system is available under a
           <ExternalLink href="https://creativecommons.org/licenses/by-nc/4.0/">Creative Commons Attribution-NonCommercial 4.0 license</ExternalLink>.
